@@ -1,1 +1,46 @@
 /* You can add global styles to this file, and also import other style files */
+:root {
+  --clr-bg: #020617;
+  --clr-font: #fff;
+  --clr-cyan300: #5eead4;
+  --clr-cyan400: #22d3ee;
+  --clr-cyan500: #0693ac;
+}
+
+@font-face {
+  font-family: "arcane";
+  src: url('../src/assets/font/ArcaneNine.otf');
+}
+
+* {
+  /* outline: 2px solid red; */
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  color: var(--clr-font);
+  list-style: none;
+  text-decoration: none;
+  transition: all .4s;
+}
+
+body {
+  background: rgb(24,55,130);
+  background: linear-gradient(90deg, rgb(10, 29, 73) 0%, rgba(28, 53, 112, 0.906) 54%, rgb(184, 102, 44) 100%);  font-family: 'Chillax', sans-serif;
+}
+
+/* html {
+    --s: 174px; 
+    --c1: #8a866f;
+    --c2: #3c4639;
+    
+    --_l:#0000 calc(25%/3),var(--c1) 0 25%,#0000 0;
+    --_g:conic-gradient(from 120deg at 50% 87.5%,var(--c1) 120deg,#0000 0);
+    background:
+      var(--_g),var(--_g) 0 calc(var(--s)/2),
+      conic-gradient(from 180deg at 75%,var(--c2) 60deg,#0000 0),
+      conic-gradient(from 60deg at 75% 75%,var(--c1) 0 60deg,#0000 0),
+      linear-gradient(150deg,var(--_l)) 0 calc(var(--s)/2),
+      conic-gradient(at 25% 25%,#0000 50%,var(--c2) 0 240deg,var(--c1) 0 300deg,var(--c2) 0),
+      linear-gradient(-150deg,var(--_l)) #1b2c28;
+    background-size: calc(0.866*var(--s)) var(--s);
+  } */

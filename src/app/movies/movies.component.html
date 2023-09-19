@@ -1,0 +1,82 @@
+<app-navbar></app-navbar>
+
+<!-- LOGIN BTN GOES TO LOGIN COMPONENT  -->
+<!-- <div>login</div>
+<button (click)="login()">Login Here</button>
+<button>Get Movies</button> -->
+
+<!-- popular movies  -->
+<div class="flex">
+  <div *ngFor="let movie of popularMovieList">
+    <div class="posters">
+      <span>
+        <img
+          [src]="
+            'https://image.tmdb.org/t/p/w220_and_h330_face/' +
+            movie['poster_path']
+          "
+          width="180px"
+          height="280px"
+        />
+        <p>{{ movie["title"] }}</p>
+      </span>
+    </div>
+  </div>
+</div>
+
+<!-- now-playing movies  -->
+<div class="flex">
+  <div *ngFor="let movie of nowPlayingList">
+    <div class="posters">
+      <span>
+        <img
+          [src]="
+            'https://image.tmdb.org/t/p/w220_and_h330_face/' +
+            movie['poster_path']
+          "
+          width="180px"
+          height="280px"
+        />
+        <p>{{ movie["title"] }}</p>
+      </span>
+    </div>
+  </div>
+</div>
+
+<!-- top-rated movies  -->
+<div class="flex">
+  <div *ngFor="let movie of topRatedList">
+    <div class="posters">
+      <span>
+        <img
+          [src]="
+            'https://image.tmdb.org/t/p/w220_and_h330_face/' +
+            movie['poster_path']
+          "
+          width="180px"
+          height="280px"
+        />
+        <p>{{ movie["title"] }}</p>
+      </span>
+    </div>
+  </div>
+</div>
+
+<!-- upcoming  -->
+<div class="flex">
+  <div *ngFor="let movie of upComingList">
+    <div class="posters">
+      <span>
+        <img
+          [src]="
+            'https://image.tmdb.org/t/p/w220_and_h330_face/' +
+            movie['poster_path']
+          "
+          width="180px"
+          height="280px"
+        />
+        <p>{{ movie["title"] }}</p>
+      </span>
+    </div>
+  </div>
+</div>

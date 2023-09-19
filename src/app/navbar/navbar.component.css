@@ -1,0 +1,76 @@
+.flex {
+    display: flex;
+    align-items: center;
+}
+
+.navbar {
+    /* background-color: #062c3b; */
+    font-size: 1.2em;
+    padding: 1% 5%;
+    justify-content: flex-start;
+    gap: 5em;
+}
+.navbar .brand a {
+    font-size: 1.8rem;
+}
+.navbar .brand a .txt-fade-in {
+    transform: translateX(-3rem);
+    opacity: 0;
+    z-index: -1;
+    transition: .2s;
+}
+.navbar .brand a i {
+    font-size: 2rem;
+    transform: translateX(-3.6rem);
+}
+.navbar .brand a:hover > .txt-fade-in {
+    transform: translateX(0);
+    opacity: 1;
+    z-index: 1;
+}
+.navbar .brand a:hover > i {
+    transform: translateX(0);
+}
+.navbar .brand a:hover > span {
+    color: var(--clr-cyan300);
+}
+/* .navbar .brand a, i {
+    font-size: 1.8rem;
+    opacity: 0.6;
+} */
+.navbar .brand {
+    /* background-color: rgb(145, 163, 179); */
+}
+.navbar .brand:hover > a, .brand:hover > i {
+    color: var(--clr-cyan300);
+    opacity: 1;
+}
+
+.navbar .links {
+    /* background-color: rgb(155, 168, 180); */
+    justify-content: center;
+    gap: 1rem;
+}
+.navbar .links li {
+    position: relative;
+}
+.navbar .links a::before {
+    content: '';
+    display: block;
+    background-color: #d36d3e;
+    height: .1rem;
+    position: absolute;
+    top: -.5rem;
+    width: 0%;
+    transition: all .4s;
+}
+.navbar .links a:hover::before {
+    width: 100%;
+    background-color: var(--clr-cyan400);
+}
+.navbar .links a:hover {
+    color: var(--clr-cyan300);
+}
+.navbar .login {
+    background-color: rgb(153, 170, 185);
+}

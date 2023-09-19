@@ -1,0 +1,22 @@
+/* these go to the movies page (component) */
+
+.flex {
+    position: relative;
+    display: flex;
+    overflow: auto;
+    gap: 3em;
+    justify-content: flex-start;
+}
+.posters {
+    background: red;
+    position: relative;
+}
+.posters p {
+    background-color: rgba(0, 0, 0, 0.521);
+    color: #fff;
+    font-size: 20px;
+    position: absolute;
+    top: 80%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+} 

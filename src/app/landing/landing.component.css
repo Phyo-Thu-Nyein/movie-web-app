@@ -1,0 +1,147 @@
+
+.flex {
+    display: flex;
+    align-items: center;
+}
+
+/* gradient overlay on the image  */
+.landing-body::before {
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 0;
+    content: '';
+    width: 100vw;
+    height: 100vh;
+    background: rgb(0, 0, 0);
+    background: linear-gradient(0deg, rgba(0, 0, 0, 1) 0%, rgba(253, 187, 45, 0) 84%);
+    z-index: 1;
+}
+
+.landing-body {
+    position: relative;
+    background-image: url('../../../src/assets/img/landing.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+}
+
+.landing-body .brand {
+    display: flex;
+    align-items: center;
+    font-size: 1.1em;
+    padding: 1% 5%;
+}
+
+.landing-body .brand i {
+    font-size: 1.6rem;
+}
+
+/* BUTTONS */
+.btn-gp-wrapper {
+    /* background-color: rgba(240, 248, 255, 0.425); */
+    -webkit-backdrop-filter: blur(3px);
+    backdrop-filter: blur(3px);
+    width: 35vw;
+    height: 25vh;
+
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 5;
+}
+
+.btn-gp-wrapper .mybtn {
+    /* background-color: rgba(18, 62, 100, 0.582); */
+    width: 50%;
+    height: 100%;
+    flex-direction: column;
+    justify-content: center;
+    border: 1px solid rgba(255, 255, 255, 0.164);
+}
+.btn-gp-wrapper .mybtn button {
+    border: none;
+    outline: none;
+    font-size: 1.4em;
+    font-family: "arcane";
+    padding: 0.2rem 1.1rem;
+    margin-bottom: 10px;
+    border-radius: .5rem;
+    cursor: pointer;
+    transition: .4s;
+}
+.btn-gp-wrapper .mybtn button:hover {
+    transform: translateY(-.25rem);
+}
+.btn-gp-wrapper .mybtn p {
+    margin-top: .3rem;
+    font-size: 1.6em;
+}
+
+.btn-gp-wrapper .login-btn {
+    background-color: #d6527723;
+    border-radius: 2rem 0 0 2rem;
+}
+.btn-gp-wrapper .login-btn button {
+    background-color: var(--clr-cyan500);
+    box-shadow: 
+        0 .2rem .2rem var(--clr-cyan400),
+        0 .3rem .3rem var(--clr-cyan300);
+}
+.btn-gp-wrapper .login-btn button:hover {
+    background-color: var(--clr-cyan400);
+    box-shadow: 0 0 .2rem var(--clr-cyan400),
+        0 0 .4rem var(--clr-cyan300);
+}
+.btn-gp-wrapper .login-btn p {
+    color: var(--clr-cyan300);
+}
+
+.btn-gp-wrapper .register-btn {
+    background-color: rgba(0, 0, 255, 0.103);
+    border-radius: 0 2rem 2rem 0;
+}
+.btn-gp-wrapper .register-btn button {
+    background-color: #aa3f5d;
+    box-shadow: 
+        0 .2rem .2rem #d65277,
+        0 .3rem .3rem #e95881;
+}
+.btn-gp-wrapper .register-btn button:hover {
+    background-color: #d65277;
+    box-shadow: 0 0 .2rem #d65277,
+        0 0 .4rem #e95881;
+}
+.btn-gp-wrapper .register-btn p {
+    color: #ff608d;
+}
+
+
+/* BIG TEXT  */
+.desc {
+    height: 92vh;
+    flex-direction: column;
+    justify-content: flex-end;
+
+    font-size: 2.6rem;
+}
+
+.desc h1,
+p {
+    text-align: center;
+    font-family: "arcane";
+    z-index: 2;
+}
+
+/* #f3ec78, #af4261 */
+.desc h1 {
+    background-color: #78eff3e3;
+    background-image: linear-gradient(90deg, #78eff3e3, #af4261);
+    background-size: 100%;
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -moz-text-fill-color: transparent;
+    margin-right: 8px;
+}

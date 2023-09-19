@@ -1,0 +1,109 @@
+.flex {
+    display: flex;
+    align-items: center;
+}
+
+.bg-img::before, .bg-img::after {
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 0;
+    content: '';
+    width: 100vw;
+    height: 100vh;
+    background: rgb(0,0,0);
+
+}
+.bg-img::before {
+    background: linear-gradient(180deg, rgba(0,0,0,1) 0%, rgba(136,100,24,0) 25%, rgba(255,255,255,0) 100%);
+    z-index: -1;
+}
+.bg-img::after {
+    background: linear-gradient(0deg, rgba(0,0,0,1) 0%, rgba(136,100,24,0) 25%, rgba(255,255,255,0) 100%);
+    z-index: 1;
+}
+
+.bg-img {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+.bg-img img {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+}
+
+/* BUTTONS and title FOR THE DISPLAYED IMAGE  */
+.btn-title-wrapper {
+    /* background-color: #ffffff62; */
+    width: 50%;
+    position: absolute;
+    left: 10%;
+    bottom: 10%;
+    cursor: default;
+}
+.btn-title-wrapper .trailer {
+    /* background-color: #d8494988; */
+    margin-bottom: .5rem;
+    width: 30%;
+}
+.btn-title-wrapper .trailer i {
+    margin-right: 1.5rem;
+    font-size: 6rem;
+    color: var(--clr-cyan400);
+    border: 1px solid #ffffff42;
+    border-radius: 0 50% 50% 0;
+}
+.btn-title-wrapper .trailer i:hover {
+    transform: translateX(.8rem);
+    border-radius: 50%;
+    box-shadow: 0 0 10px cyan;
+}
+.btn-title-wrapper .trailer p {
+    /* background-color: #49d8b936; */
+    opacity: 0;
+    font-size: 1.2rem;
+    transform: translateX(-6rem);
+    z-index: -1;
+}
+.btn-title-wrapper .trailer i:hover + p {
+    transform: translateX(0);
+    opacity: 1;
+}
+.btn-title-wrapper .title h1 {
+    /* background-color: #c3d84988; */
+    font-family: 'arcane';
+    font-size: 6rem;
+}
+
+.btn-title-wrapper .detail {
+    justify-content: flex-start;
+    gap: 1rem;
+}
+.btn-title-wrapper .detail .detail i {
+    /* background-color: rgba(105, 3, 114, 0.493); */
+    margin-top: .2rem;
+    font-size: 1rem;
+}
+.btn-title-wrapper .detail .detail-btn {
+    background-color: #49d8b936;
+    border-radius: 5px;
+    width: 18%;
+    height: 3rem;
+    font-size: 1.3rem;
+    justify-content: center;
+    gap: .3rem;
+    transform: translateY(.5rem);
+    transition: all .4s;
+}
+.btn-title-wrapper .detail .detail-btn:hover {
+    background-color: var(--clr-cyan500);
+    box-shadow: 0 0 15px var(--clr-cyan500);
+    transform: translateY(0);
+}
+
