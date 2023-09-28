@@ -4,7 +4,7 @@
     position: relative;
     display: flex;
     overflow: auto;
-    gap: 2em;
+    gap: 1.5rem;
     justify-content: flex-start;
 }
 
@@ -32,8 +32,9 @@
     background-color: #082d3346;
     flex-wrap: wrap;
     border-radius: .6rem;
-    padding: 1% 2%;
-    width: 85.5vw;
+    padding: 2% 0 2% 2.3%;
+    margin: 0 5.5rem;
+    width: auto;
     height: auto;
     /* height: 58rem; */
     /* box-shadow: inset 10px 0 10px #f8a100; */

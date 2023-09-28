@@ -26,6 +26,10 @@
   transition: all .4s;
 }
 
+a {
+  color: #fff;
+}
+
 /* width */
 ::-webkit-scrollbar {
   width: 8px;
