@@ -57,6 +57,7 @@ export class DetailComponent implements OnInit {
     this.movieSub = result.subscribe({
       next: (response: MovieDetails) => {
         this.bg_path = response.backdrop_path!;
+        console.log(this.bg_path);
         this.poster = response.poster_path!;
         this.movieTitle = response.title!;
         this.rating = response.vote_average!;

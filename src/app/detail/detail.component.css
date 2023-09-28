@@ -8,9 +8,6 @@
 /* https://placehold.jp/3d4070/ffffff/1120x480.jpg?text=backdrop */
 .bk-img {
     position: absolute;
-    /* background-image: url('https://image.tmdb.org/t/p/w500/{{bg_path}}');
-    background-repeat: no-repeat;
-    background-size: cover; */
     width: 100vw;
     height: 92vh;
     max-width: 100%;
