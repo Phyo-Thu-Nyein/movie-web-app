@@ -3,58 +3,68 @@
     align-items: center;
 }
 
-.navbar {
-    /* background-color: #062c3b; */
+.mynavbar {
+    /* background-color: #062c3b33;
+    backdrop-filter: blur(10px); */
     font-size: 1.2em;
-    padding: 1% 5%;
+    padding: .65% 5%;
     justify-content: flex-start;
     gap: 5em;
 }
-.navbar .brand a {
+.mynavbar .brand {
+    cursor: pointer;
+}
+.mynavbar .brand a {
+    font-weight: 600;
     font-size: 1.8rem;
 }
-.navbar .brand a .txt-fade-in {
+.mynavbar .brand a .txt-fade-in {
     transform: translateX(-3rem);
     opacity: 0;
     z-index: -1;
     transition: .2s;
 }
-.navbar .brand a i {
+.mynavbar .brand a i {
     font-size: 2rem;
-    transform: translateX(-3.6rem);
+    transform: translateX(-3.5rem);
 }
-.navbar .brand a:hover > .txt-fade-in {
+.mynavbar .brand a:hover > .txt-fade-in {
     transform: translateX(0);
     opacity: 1;
     z-index: 1;
 }
-.navbar .brand a:hover > i {
+.mynavbar .brand a:hover > i {
     transform: translateX(0);
 }
-.navbar .brand a:hover > span {
+.mynavbar .brand a:hover > span {
     color: var(--clr-cyan300);
 }
-/* .navbar .brand a, i {
+/* .mynavbar .brand a, i {
     font-size: 1.8rem;
     opacity: 0.6;
 } */
-.navbar .brand {
-    /* background-color: rgb(145, 163, 179); */
-}
-.navbar .brand:hover > a, .brand:hover > i {
+/* .mynavbar .brand {
+    background-color: rgb(145, 163, 179);
+} */
+.mynavbar .brand:hover > a, .brand:hover > i {
     color: var(--clr-cyan300);
     opacity: 1;
 }
 
-.navbar .links {
+.mynavbar .links {
     /* background-color: rgb(155, 168, 180); */
     justify-content: center;
     gap: 1rem;
+    cursor: pointer;
 }
-.navbar .links li {
+.mynavbar .links li {
+    font-weight: 400;
     position: relative;
 }
-.navbar .links a::before {
+.mynavbar .links a {
+    color: #fff;
+}
+.mynavbar .links a::before {
     content: '';
     display: block;
     background-color: #d36d3e;
@@ -64,13 +74,10 @@
     width: 0%;
     transition: all .4s;
 }
-.navbar .links a:hover::before {
+.mynavbar .links a:hover::before {
     width: 100%;
     background-color: var(--clr-cyan400);
 }
-.navbar .links a:hover {
+.mynavbar .links a:hover {
     color: var(--clr-cyan300);
-}
-.navbar .login {
-    background-color: rgb(153, 170, 185);
 }

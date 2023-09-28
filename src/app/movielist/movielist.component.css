@@ -1,0 +1,48 @@
+/* these go to the movies page (component) */
+
+.flex {
+    position: relative;
+    display: flex;
+    overflow: auto;
+    gap: 2em;
+    justify-content: flex-start;
+}
+
+.movie-list {
+    background-color: #082d3346;
+    border-radius: .6rem .6rem 0 0;
+    padding: 1% 2%;
+    /* box-shadow: inset 10px 0 10px #f8a100; */
+}
+
+.posters {
+    /* background: red; */
+    position: relative;
+}
+.posters img {
+    width: 150px;
+    height: 220px;
+    border-radius: .6rem;
+    cursor: pointer;
+    opacity: .8;
+}
+.posters img:hover {
+    transform: translateY(-.3rem);
+    opacity: 1;
+    box-shadow:  0 6px 5px rgba(0, 255, 255, 0.363);
+}
+
+.overview p {
+    /* background-color: rgba(0, 0, 0, 0.822); */
+    color: #fff;
+    font-size: 16px;
+    max-width: 100%;
+
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    max-height: 90px;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+
+} 

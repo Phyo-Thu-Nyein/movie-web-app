@@ -1,0 +1,21 @@
+<div>
+    <div class="category flex">
+      <h2>{{category}}</h2>
+    </div>
+
+    <div class="movie-list flex">
+      <div *ngFor="let movie of movieList">
+        <div class="posters">
+          <span>
+            <img 
+              (click)="goToDetail(movie['id']!)"
+              [src]="'https://image.tmdb.org/t/p/w220_and_h330_face/' + movie['poster_path']"/>
+          </span>
+        </div>
+        <div class="overview">
+          <p>{{ movie["title"] }}</p>
+        </div>
+      </div>
+    </div>
+
+</div>

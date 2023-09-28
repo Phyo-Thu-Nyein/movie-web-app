@@ -1,0 +1,172 @@
+/* making the form center  */
+.whole-wrapper {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* background image  */
+.signin-bg {
+    background-image: url('../../assets/img/signin-bg.png');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    
+}
+
+/* ---------------- FORM STARTS HERE ---------------- */
+.form-wrapper {
+    background: rgba(0, 50, 63, 0.322);
+    width: 370px;
+    border: 2px solid rgba(255, 255, 255, 0.233);
+    border-radius: 20px;
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    padding: 15px 20px 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.671);
+}
+
+.form-wrapper h1 {
+    margin-bottom: 30px;
+}
+
+.form-wrapper .form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+}
+
+.form-wrapper .form .text-inputs {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2.4rem;
+    width: 92%;
+    margin-bottom: 2rem;
+}
+
+.form-wrapper .text-inputs .row {
+    display: flex;
+    justify-content: center;
+    position: relative;
+    width: 100%;
+    height: 45px;
+}
+
+.form-wrapper .text-inputs .row input {
+    outline: none;
+    color: #fff;
+    background: transparent;
+    width: 100%;
+    height: 100%;
+    font-size: 20px;
+    border: none;
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.315);
+    padding-left: 9%;
+    padding-right: 13%;
+}
+
+.form-wrapper .form .text-inputs .row input:focus {
+    background-color: #00000028;
+}
+
+.form-wrapper .text-inputs .row input::placeholder {
+    font-weight: 200;
+    color: #fff;
+}
+
+.form-wrapper .text-inputs .row i {
+    color: var(--clr-cyan300);
+    position: absolute;
+    right: 20px;
+    transform: translateY(60%);
+    font-size: 20px;
+}
+
+.form-wrapper .form .chk-forgot {
+    width: 90%;
+    margin-top: 2rem;
+    display: flex;
+    justify-content: space-between;
+    cursor: pointer;
+}
+.form-wrapper .form .chk-forgot .checkbox {
+    display: flex;
+    align-items: center;
+    gap: .2rem;
+    cursor: pointer;
+}
+.form-wrapper .form .chk-forgot .checkbox input {
+    outline: none;
+    border: none;
+}
+.form-wrapper .form .chk-forgot a {
+    font-size: 14px;
+}
+
+.form-wrapper .form .chk-forgot a:hover {
+    text-decoration: underline;
+}
+
+.form-wrapper .form .button-box {
+    width: 90%;
+}
+
+.form-wrapper .form .button-box button {
+    margin-top: 10px;
+    width: 100%;
+    height: 45px;
+    background: rgba(0, 0, 0, 0.445);
+    border: 1px solid rgba(255, 255, 255, 0.473);
+    outline: none;
+    border-radius: 40px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, .1);
+    cursor: pointer;
+    font-size: 16px;
+    color: var(--clr-cyan300);
+    font-size: 20px;
+    font-weight: 600;
+    transition: .4s;
+}
+
+.form-wrapper .form .button-box button:hover {
+    transform: translateY(-.5rem);
+    border-radius: 10px;
+    background: #29e4fd62;
+    color: #000000;
+    /* box-shadow: 0 0 10px rgb(30, 228, 15); */
+}
+
+.form-wrapper .form .link-box a {
+    font-weight: 600;
+    text-decoration: none;
+    color: #fff;
+    transition: .3s;
+}
+
+.form-wrapper .form .link-box a:hover {
+    color: var(--clr-cyan300);
+}
+
+/* ERROR MSG  */
+.error {
+    /* background-color: pink; */
+    position: absolute;
+    width: 20rem;
+    text-align: center;
+    bottom: -1.8rem;
+    font-size: .95rem;
+    font-weight: 600;
+    color: rgb(255, 92, 92);
+}

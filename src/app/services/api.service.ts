@@ -1,40 +1,67 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { UserDetailsService } from '../interface/userdetails-service';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class ApiService {
+  constructor(private http: HttpClient) {}
 
-  constructor(private http: HttpClient) { }
+  baseUrl: string = 'https://api.themoviedb.org/3/movie/';
+  apiKey: string = 'e5b98fbae855f763ab386ead4da9c365';
 
-  baseUrl: string = "https://api.themoviedb.org/3/movie/";
-  apiKey: string = "050c28541f900007285c3020069bfd62";
-
-  // https://api.themoviedb.org/3/movie/-------?api_key=050c28541f900007285c3020069bfd62&language=en-US&page=2
+  // myAPI key=e5b98fbae855f763ab386ead4da9c365
+  //sirAPI key=050c28541f900007285c3020069bfd62
 
   getMovies(category: string) {
-    return this.http.get(`${this.baseUrl}${category}?api_key=${this.apiKey}&language=en-US&page=1`)
+    return this.http.get(
+      `${this.baseUrl}${category}?api_key=${this.apiKey}&language=en-US`
+    );
+  }
+
+  // getting recommended movies
+  // https://api.themoviedb.org/3/movie/565770/recommendations?api_key=e5b98fbae855f763ab386ead4da9c365&language=en-US
+  getRcmdMovies(movieID: number) {
+    return this.http.get(
+      `${this.baseUrl}${movieID}/recommendations?api_key=${this.apiKey}&language=en-US`
+    );
   }
 
   getDetails(movieID: number) {
-    return this.http.get(`${this.baseUrl}${movieID}?api_key=${this.apiKey}&language=en-US&page=1`)
+    return this.http.get(
+      `${this.baseUrl}${movieID}?api_key=${this.apiKey}&language=en-US`
+    );
+  }
+
+  getCasts(movieID: number) {
+    return this.http.get(
+      `${this.baseUrl}${movieID}/credits?api_key=${this.apiKey}&language=en-US`
+    );
+  }
+
+  getTrailer(movieID: number) {
+    return this.http.get(
+      `${this.baseUrl}${movieID}/videos?api_key=${this.apiKey}&language=en-US`
+    );
   }
 
   loginUrl: string = 'https://msi.htoowaiyan.com/api/v1/users/signin';
-  data = {
-    "email" : "julioeleven3@gmail.com",
-    "password" : "password" 
-  }
+  registerUrl: string = 'https://msi.htoowaiyan.com/api/v1/users/signup';
+ 
+  
   options = {
     headers: new HttpHeaders({
-      'Accept': 'text/html,application/json',
-      'Content-Type': 'application/json'
-    })
+      Accept: 'text/html,application/json',
+      'Content-Type': 'application/json',
+    }),
   };
 
-  login() {
-    return this.http.post(this.loginUrl, this.data, this.options)
+  login(userdata: UserDetailsService) {
+    return this.http.post(this.loginUrl, userdata, this.options);
   }
 
+  register(userdata: UserDetailsService) {
+    return this.http.post(this.registerUrl, userdata, this.options);
+  }
 }

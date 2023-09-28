@@ -1,1 +1,78 @@
-<p>signin works!</p>
+<div class="signin-bg">
+  <!-- <img src="../../assets/img/signin-bg.png" alt=""> -->
+</div>
+<div class="whole-wrapper">
+  <!-- FORM STARTS  -->
+  <div class="form-wrapper">
+    <h1>Welcome!</h1>
+    <form (ngSubmit)="login()" #loginform="ngForm" class="form">
+      <div class="text-inputs">
+        <!-- EMAIL FIELD  -->
+        <div class="row email-box">
+          <label for=""><i class="bx bxs-envelope"></i></label>
+          <input
+            type="email"
+            name="email"
+            id="email"
+            placeholder="Email"
+            [(ngModel)]="email"
+            required 
+            minlength="4"
+            #mail = "ngModel"
+          />
+          <!-- EMAIL ERROR  -->
+          <span
+            *ngIf="!mail.valid && mail.touched"
+            class="error mail-error">
+            Email is left blank or wrong!
+          </span>
+        </div>
+
+        <!-- PASSWORD FIELD  -->
+        <div class="row psw-box">
+          <label for=""><i class="bx bxs-lock"></i> </label>
+          <input
+            type="password"
+            name="password"
+            id="password"
+            placeholder="Password"
+            [(ngModel)] = "password"
+            required
+            minlength="4"
+            #pass = "ngModel"
+          />
+          <!-- PASSWORD ERROR -->
+          <span
+            *ngIf="!pass.valid && pass.touched"
+            class="error psw-error">
+            Password is left blank or wrong!
+          </span>
+        </div>
+      </div>
+
+      <div class="row chk-forgot">
+        <label class="checkbox" for="checkbox">
+          <input type="checkbox" id="checkbox" name="checkbox" />
+          <span>Remember me</span>
+        </label>
+        <a href="">Forgot Password?</a>
+      </div>
+      
+      <div class="row button-box">
+        <button
+          type="submit"
+          id="login"
+          [disabled]="!mail.valid || !pass.valid"
+        >
+          Login
+        </button>
+      </div>
+      <div class="row link-box">
+        <p>Not a member? <a routerLink="/signup">Register</a> now!</p>
+      </div>
+    </form>
+  </div>
+</div>
+<!-- LOGIN BTN GOES TO LOGIN COMPONENT  -->
+<!-- <div>login</div>
+<button (click)="login()">Login Here</button> -->

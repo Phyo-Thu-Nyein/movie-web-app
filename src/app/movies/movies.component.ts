@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { ApiService } from '../services/api.service';
 import { Subscription } from 'rxjs';
 import { HttpErrorResponse } from '@angular/common/http';
+import { ActivatedRoute, NavigationEnd, NavigationExtras, Router } from '@angular/router';
+import { Movie, Result } from '../interface/movie-result';
 
 @Component({
   selector: 'app-movies',
@@ -9,30 +11,37 @@ import { HttpErrorResponse } from '@angular/common/http';
   styleUrls: ['./movies.component.css'],
 })
 export class MoviesComponent implements OnInit {
-  constructor(private apiService: ApiService) {}
+  constructor(private apiService: ApiService, private router: Router, private activatedRoute:ActivatedRoute) {  }
 
+  // mySubscription: Subscription = new Subscription();
   movieSub: Subscription = new Subscription();
 
-  popularMovieList = [];
-  nowPlayingList = [];
-  topRatedList = [];
-  upComingList = [];
+  popularMovieList: Result[] = [];
+  nowPlayingList: Result[] = [];
+  topRatedList: Result[] = [];
+  upComingList: Result[] = [];
 
   movieID?: number;
-  backdrop_path: string = 'http://image.tmdb.org/t/p/w500/';
+  backdrop_path: string = '';
+  // http://image.tmdb.org/t/p/w500/
   poster_path: string = '';
 
-  ngOnInit(): void {
+  ngOnInit() {
+    
+    // this.reloadPage();
+    // console.log('-------BEFORE------');
+    // this.getMovie();
+    // console.log('-------AFTER--------');
+
     var result = this.apiService.getMovies('popular');
     this.movieSub = result.subscribe({
-      next: (response: any) => {
-        this.popularMovieList = response['results'];
-        this.movieID = response['results'][1]['id'];
-        this.backdrop_path = response['results'][1]['backdrop_path'];
-
-        this.poster_path = response['resutls'][1]['poster_path'];
+      next: (response: Movie) => {
+        this.popularMovieList = response.results!;
+        console.log(this.popularMovieList[1].id);
+        this.movieID = response.results![1].id;
+        this.backdrop_path = response.results![1].backdrop_path!;
+        this.poster_path = response.results![1].poster_path!;
       },
-
       error: (err: HttpErrorResponse) => {
         console.log(err);
       },
@@ -42,15 +51,13 @@ export class MoviesComponent implements OnInit {
     this.movieSub = result.subscribe({
       next: (response: any) => {
         this.nowPlayingList = response['results'];
-        this.movieID = response['results'][1]['id'];
-        this.backdrop_path = response['results'][1]['backdrop_path'];
-
-        this.poster_path = response['resutls'][1]['poster_path'];
+        this.backdrop_path = response['results'][2]['backdrop_path'];
       },
       error: (err: HttpErrorResponse) => {
         console.log(err);
       },
     });
+
     var result = this.apiService.getMovies('top_rated');
     this.movieSub = result.subscribe({
       next: (response: any) => {
@@ -58,12 +65,13 @@ export class MoviesComponent implements OnInit {
         this.movieID = response['results'][1]['id'];
         this.backdrop_path = response['results'][1]['backdrop_path'];
 
-        this.poster_path = response['resutls'][1]['poster_path'];
+        this.poster_path = response['results'][1]['poster_path'];
       },
       error: (err: HttpErrorResponse) => {
         console.log(err);
       },
     });
+
     var result = this.apiService.getMovies('upcoming');
     this.movieSub = result.subscribe({
       next: (response: any) => {
@@ -71,7 +79,7 @@ export class MoviesComponent implements OnInit {
         this.movieID = response['results'][1]['id'];
         this.backdrop_path = response['results'][1]['backdrop_path'];
 
-        this.poster_path = response['resutls'][1]['poster_path'];
+        this.poster_path = response['results'][1]['poster_path'];
       },
       error: (err: HttpErrorResponse) => {
         console.log(err);
@@ -79,7 +87,59 @@ export class MoviesComponent implements OnInit {
     });
   }
 
-  // calling via button click 
+  // reloadPage() {
+  //   window.location.reload();
+  //   console.log("it works, the reloading");
+  // }
+
+  goToDetail(movieID: number) {
+    var id = movieID;
+    this.router.navigateByUrl(`detail/${id}`);
+
+  }
+
+  ngOnDestroy() {
+    
+    if (this.movieSub) {
+      this.movieSub.unsubscribe();
+    }
+    // if (this.mySubscription) {
+    //   this.mySubscription.unsubscribe();
+    // }
+  }
+
+  // getMovie() {
+  //   return new Promise((resolve) => {
+  //     var result = this.apiService.getMovies('popular');
+  //     this.movieSub = result.subscribe({
+  //       next: (response: any) => {
+  //         this.popularMovieList = response['results'];
+  //         console.log(this.popularMovieList[1]['id'])
+  //         this.movieID = response['results'][1]['id'];
+  //         this.backdrop_path = response['results'][1]['backdrop_path'];
+
+  //         this.poster_path = response['results'][1]['poster_path'];
+  //         resolve(true);
+  //       },
+
+  //       error: (err: HttpErrorResponse) => {
+  //         console.log(err);
+  //         resolve(false);
+  //       },
+  //     });
+  //   });
+  // }
+
+  // toDetails(movieID: number) {
+  //   const navigationExtras: NavigationExtras = {
+  //     state: {
+  //       'overview': 'hello'
+  //     }
+  //   };
+  //   this.router.navigate([`details/${movieID}`], {state: {example: 'bar'}})
+  // }
+
+  // calling via button click
   // getPopularMovie() {
   //   var result = this.apiService.getMovies('popular');
   //   this.movieSub = result.subscribe({
@@ -88,7 +148,7 @@ export class MoviesComponent implements OnInit {
   //       this.movieID = response['results'][1]['id'];
   //       this.backdrop_path = response['results'][1]['backdrop_path'];
 
-  //       this.poster_path = response['resutls'][1]['poster_path'];
+  //       this.poster_path = response['results'][1]['poster_path'];
   //     },
   //     error: (err: HttpErrorResponse) => {
   //       console.log(err);
@@ -104,7 +164,7 @@ export class MoviesComponent implements OnInit {
   //       this.movieID = response['results'][1]['id'];
   //       this.backdrop_path = response['results'][1]['backdrop_path'];
 
-  //       this.poster_path = response['resutls'][1]['poster_path'];
+  //       this.poster_path = response['results'][1]['poster_path'];
   //     },
   //     error: (err: HttpErrorResponse) => {
   //       console.log(err);
@@ -120,7 +180,7 @@ export class MoviesComponent implements OnInit {
   //       this.movieID = response['results'][1]['id'];
   //       this.backdrop_path = response['results'][1]['backdrop_path'];
 
-  //       this.poster_path = response['resutls'][1]['poster_path'];
+  //       this.poster_path = response['results'][1]['poster_path'];
   //     },
   //     error: (err: HttpErrorResponse) => {
   //       console.log(err);
@@ -136,7 +196,7 @@ export class MoviesComponent implements OnInit {
   //       this.movieID = response['results'][1]['id'];
   //       this.backdrop_path = response['results'][1]['backdrop_path'];
 
-  //       this.poster_path = response['resutls'][1]['poster_path'];
+  //       this.poster_path = response['results'][1]['poster_path'];
   //     },
   //     error: (err: HttpErrorResponse) => {
   //       console.log(err);
@@ -148,18 +208,4 @@ export class MoviesComponent implements OnInit {
 
   // email: string = 'julioeleven3@gmail.com';
   // password: string = 'password';
-
-  login() {
-    // console.log(this.LoginForm?.value);
-    var result = this.apiService.login();
-
-    result.subscribe({
-      next: (response: any) => {
-        console.log(response.data);
-      },
-      error: (err: HttpErrorResponse) => {
-        console.log(err);
-      },
-    });
-  }
 }

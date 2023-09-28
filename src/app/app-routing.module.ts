@@ -6,21 +6,20 @@ import { SigninComponent } from './signin/signin.component';
 import { SignupComponent } from './signup/signup.component';
 import { NotfoundComponent } from './notfound/notfound.component';
 import { MoviesComponent } from './movies/movies.component';
+import { DetailComponent } from './detail/detail.component';
 
 const routes: Routes = [
   {
     path: '',
-    component: LandingComponent,
-    children: [
-      {
-        path: "signin",
-        component: SigninComponent
-      },
-      {
-        path: "signup",
-        component: SignupComponent
-      }
-    ]
+    component: LandingComponent
+  },
+  {
+    path: 'signin',
+    component: SigninComponent
+  },
+  {
+    path: 'signup',
+    component: SignupComponent
   },
   {
     path: 'home',
@@ -29,6 +28,10 @@ const routes: Routes = [
   {
     path: 'movies',
     component: MoviesComponent
+  },
+  {
+    path: 'detail/:movieid',
+    component: DetailComponent
   },
   {
     path: "**", //wildcard

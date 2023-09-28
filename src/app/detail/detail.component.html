@@ -1,0 +1,137 @@
+<app-navbar></app-navbar>
+
+<!-- BACKDROP IMAGE  -->
+<div class="bk-img background-image">
+  <img src="https://image.tmdb.org/t/p/original/{{ bg_path }}" alt="" />
+</div>
+
+<!-- auto-playing bg vid  -->
+<!-- https://www.youtube.com/embed/{{trailerKey}}?si=_6km0Wqd3Z-oYzTI?controls=0&autoplay=1&mute=1&playsinline=1&playlist={{trailerKey}}&loop=1 -->
+<!-- <div class="bg-vid">
+  <iframe
+    src="https://www.youtube.com/watch?v={{trailerKey}}"
+    
+  ></iframe>
+</div> -->
+
+<!-- DETAIL CONTENT  -->
+<div class="detail-wrapper flex">
+  <div class="poster">
+    <img
+      src="https://image.tmdb.org/t/p/w600_and_h900_bestv2/{{ poster }}"
+      alt=""
+    />
+  </div>
+  <div class="details flex">
+    <div class="title">
+      <h1>{{ movieTitle }}</h1>
+    </div>
+    <div class="rating-runtime flex">
+      <div class="rating">
+        <span style="color: yellow">IMBD: {{ imbd }}</span>
+      </div>
+      <div class="runtime">
+        <span>{{ runtime }} mins</span>
+      </div>
+    </div>
+    <div class="trailers flex">
+      <a
+        class="mybtn flex"
+        href="https://www.youtube.com/watch?v={{ trailerKey }}"
+        target="_blank"
+      >
+        <i class="bx bxl-youtube"></i>
+        <span>Trailer</span>
+      </a>
+      <!-- <button routerLink="" (click)="trailerYT()" class="flex">
+        <span>Trailer</span>
+      </button> -->
+    </div>
+    <div class="overview">
+      <strong>Overview: </strong>
+      <p>{{ overview }}</p>
+    </div>
+    <div class="more-details flex">
+      <div class="date-genre-cast">
+        <div class="date">
+          <strong>Released: </strong>
+          <span>{{ release_date }}</span>
+        </div>
+        <div class="genre">
+          <strong>Genre: </strong>
+          <span *ngFor="let genre of genres">
+            {{ genre["name"] }}
+          </span>
+        </div>
+        <div class="casts">
+          <strong>Casts: </strong>
+          <ng-container *ngFor="let cast of casts; let i = index">
+            <span *ngIf="i < 5">
+              {{ cast["name"] }}
+            </span>
+            <span *ngIf="i < 4"> | </span>
+          </ng-container>
+        </div>
+      </div>
+      <div class="time-country-prod">
+        <div class="duration">
+          <strong>Duration: </strong>
+          <span>{{ runtime }} mins</span>
+        </div>
+        <div class="country">
+          <strong>Country: </strong>
+          <ng-container *ngFor="let country of countries; let i = index">
+            <span>
+              {{ country["name"] }}
+            </span>
+            <span *ngIf="i < countries.length - 1"> | </span>
+          </ng-container>
+        </div>
+        <div class="production">
+          <strong>Production: </strong>
+          <ng-container *ngFor="let company of companies; let i = index">
+            <span>
+              {{ company["name"] }}
+            </span>
+            <span *ngIf="i < companies.length - 1">|</span>
+          </ng-container>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="scroll-arrow">
+    <h3>Scroll For More</h3>
+    <h1><i class='bx bxs-chevron-down bx-fade-up' style='color:#ffffff' ></i></h1>
+  </div>
+</div>
+
+<!-- CASTS SECTION STARTS HERE  -->
+<div class="casts-section">
+
+  <h1>Casts</h1>
+  
+  <div class="casts-wrapper flex">
+    
+    <div *ngFor="let cast of casts; let i = index">
+      <ng-container *ngIf="i < 13">
+        <div class="one-cast">
+          <div *ngIf="cast['profile_path']==null" class="no-pfp">
+            <img src="../../assets/img/null-profile.jpg" alt="" width="200px" height="300px">
+          </div>
+          <img [src]="'http://image.tmdb.org/t/p/w300_and_h450_bestv2/' + cast['profile_path']" alt="" width="200px"/>
+          <h4>{{cast['name']}}</h4>
+          <p>{{cast['character']}}</p>
+        </div>
+      </ng-container>
+      
+    </div>
+  </div>
+</div>
+
+<!-- RECOMMEND SECTION  -->
+<div class="rmd-section">
+  <app-recommendations></app-recommendations>
+</div>
+
+<!-- FOOTER  -->
+<app-footer></app-footer>

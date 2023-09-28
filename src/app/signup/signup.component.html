@@ -1,1 +1,113 @@
-<p>signup works!</p>
+<div class="signin-bg">
+  <!-- <img src="../../assets/img/signin-bg.png" alt=""> -->
+</div>
+<div class="whole-wrapper">
+  <!-- FORM STARTS  -->
+  <div class="form-wrapper">
+    <h1>Register</h1>
+    <form (ngSubmit)="register()" #loginform="ngForm" class="form">
+      <div class="text-inputs">
+        
+        <!-- USERNAME FIELD  -->
+        <div class="row username-box">
+          <label for=""><i class="bx bxs-user"></i></label>
+          <input
+            type="text"
+            name="username"
+            id="username"
+            placeholder="Username"
+            [(ngModel)]="username"
+            required 
+            minlength="4"
+            #name = "ngModel"
+          />
+          <!-- NAME ERROR  -->
+          <span
+            *ngIf="!name.valid && name.touched"
+            class="error mail-error">
+            Username must have at least 4 characters!
+          </span>
+        </div>
+
+
+        <!-- EMAIL FIELD  -->
+        <div class="row email-box">
+          <label for=""><i class="bx bxs-envelope"></i></label>
+          <input
+            type="email"
+            name="email"
+            id="email"
+            placeholder="Email"
+            [(ngModel)]="email"
+            required 
+            minlength="4"
+            #mail = "ngModel"
+          />
+          <!-- EMAIL ERROR  -->
+          <span
+            *ngIf="!mail.valid && mail.touched"
+            class="error mail-error">
+            Email is left blank or wrong!
+          </span>
+        </div>
+
+        <!-- PASSWORD FIELD  -->
+        <div class="row psw-box">
+          <label for=""><i class="bx bxs-lock"></i> </label>
+          <input
+            type="password"
+            name="password"
+            id="password"
+            placeholder="Password"
+            [(ngModel)] = "password"
+            required
+            minlength="4"
+            #pass = "ngModel"
+          />
+          <!-- PASSWORD ERROR -->
+          <span
+            *ngIf="!pass.valid && pass.touched"
+            class="error psw-error">
+            Password must have at least 4 characters!
+          </span>
+        </div>
+        
+        <!-- CONFIRM PASSWORD FIELD  -->
+        <div class="row psw-box">
+          <label for=""><i class="bx bxs-lock"></i> </label>
+          <input
+            type="password"
+            name="password"
+            id="conpassword"
+            placeholder="Confirm Password"
+            [(ngModel)] = "conpassword"
+            required
+            minlength="4"
+            #conpass = "ngModel"
+          />
+          <!-- CONFIRM PASSWORD ERROR -->
+          <span
+            *ngIf="!conpass.valid && conpass.touched"
+            class="error psw-error">
+            Passwords do not match!
+          </span>
+        </div>
+        
+      </div>
+      
+      <!-- REGISTER BUTTON  -->
+      <div class="row button-box">
+        <button
+          type="submit"
+          id="register"
+          [disabled]="!name.valid || !mail.valid || !pass.valid || !conpass.valid"
+        >
+          Register
+        </button>
+      </div>
+      <div class="row link-box">
+        <p>Already a member? <a routerLink="/signin">Login</a> now!</p>
+      </div>
+    </form>
+  </div>
+</div>

@@ -83,7 +83,7 @@
 
 .btn-title-wrapper .detail {
     justify-content: flex-start;
-    gap: 1rem;
+    gap: .4rem;
 }
 .btn-title-wrapper .detail .detail i {
     /* background-color: rgba(105, 3, 114, 0.493); */
@@ -93,7 +93,7 @@
 .btn-title-wrapper .detail .detail-btn {
     background-color: #49d8b936;
     border-radius: 5px;
-    width: 18%;
+    width: 25%;
     height: 3rem;
     font-size: 1.3rem;
     justify-content: center;

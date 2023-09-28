@@ -1,0 +1,178 @@
+.flex {
+    display: flex;
+    align-items: center;
+}
+
+/* BACKDROP IMG LINK  */
+/* https://image.tmdb.org/t/p/w500/{{bg_path}} */
+/* https://placehold.jp/3d4070/ffffff/1120x480.jpg?text=backdrop */
+.bk-img {
+    position: absolute;
+    /* background-image: url('https://image.tmdb.org/t/p/w500/{{bg_path}}');
+    background-repeat: no-repeat;
+    background-size: cover; */
+    width: 100vw;
+    height: 92vh;
+    max-width: 100%;
+    z-index: -1;
+}
+.bk-img img {
+    width: 100%;
+    height: 92vh;
+    object-fit: cover;
+}
+
+/* .bg-vid {
+    position: absolute;
+    width: 100vw;
+    height: 85vh;
+    max-width: 100%;
+    z-index: -1;
+
+} */
+
+.detail-wrapper {
+    background-color: rgba(0, 0, 0, 0.767);
+    padding-left: 10%;
+    gap: 3rem;
+    width: 100vw;
+    height: 92vh;
+    max-width: 100%;
+}
+
+.detail-wrapper .poster {
+    /* background-color: rgba(240, 248, 255, 0.568); */
+    /* padding-top: .65rem; */
+    height: 65%;
+}
+.detail-wrapper .poster img {
+    border-radius: 10px;
+    width: 18vw;
+}
+
+/* all span tags  */
+span {
+    font-size: 14px;
+}
+
+.details {
+    /* background-color: rgba(10, 29, 48, 0.267); */
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+    width: 70%;
+    height: 65%;
+}
+
+.details .title {
+    font-size: 1.3rem;
+}
+
+.details .rating-runtime {
+    gap: 2rem;
+}
+
+.details .trailers {
+    /* background-color: rgba(240, 248, 255, 0.411);
+    gap: 2rem; */
+    position: relative;
+}
+
+.details .trailers .mybtn::before {
+    font-size: 1.2rem;
+    font-weight: 600;
+    content: 'Play';
+    position: absolute;
+    left: 3.5rem;
+    opacity: 0;
+    transition: 1s;
+}
+.details .trailers .mybtn {
+    background-color: var(--clr-cyan500);
+    justify-content: center;
+    gap: .2rem;
+    font-size: 2rem;
+    width: 8rem;
+    height: 3rem;
+    border-radius: .5rem;
+    border: none;
+}
+.details .trailers .mybtn:hover {
+    background-color: red;
+    /* transform: translateY(-.2rem); */
+}
+.details .trailers .mybtn:hover > span {
+    opacity: 0;
+}
+.details .trailers .mybtn:hover::before {
+    opacity: 1;
+}
+.details .trailers .mybtn span {
+    font-weight: 600;
+    font-size: 1.2rem;
+}
+
+.more-details {
+    align-items: flex-start;
+    gap: .8rem;
+}
+
+.more-details .date-genre-cast {
+    /* background-color: rgba(240, 248, 255, 0.404); */
+    width: 50%;
+}
+
+.time-country-prod {
+    /* background-color: rgba(240, 248, 255, 0.404); */
+    width: 50%;
+}
+
+.detail-wrapper .scroll-arrow {
+    position: absolute;
+    bottom: 1.5rem;
+    left: 50%;
+}
+.detail-wrapper .scroll-arrow h3 {
+    margin-left: -3rem;
+    margin-bottom: .5rem;
+}
+
+/* CAST SECTION STARTS HERE  */
+.casts-section {
+    background-color: #000000b6;
+    width: 100%;
+    height: 35rem;
+}
+.casts-section h1 {
+    padding: 2rem 0 .5rem;
+    margin-left: 5%;
+}
+
+.casts-wrapper {
+    background-color: rgba(91, 116, 29, 0);
+    overflow: auto;
+    /* gap: .5rem; */
+    justify-content: flex-start;
+    width: 90%;
+    margin-left: 5%;
+}
+
+.one-cast {
+    background: rgb(69,84,132);
+    background: linear-gradient(90deg, rgb(36, 48, 90) 0%, rgba(104, 44, 83, 0.493) 50%, rgb(100, 68, 29) 100%);
+    height: 25rem;
+    margin: .5rem;
+}
+.one-cast h4, p {
+    /* overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical; */
+    padding: 0 .4rem;
+}
+
+/* RECOMMENDATION SECTION  */
+.rmd-section {
+    margin: 3rem 1rem;
+}

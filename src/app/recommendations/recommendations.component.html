@@ -1,0 +1,24 @@
+<div class="list-wrapper">
+  
+    <div class="heading flex">
+      <h1>Recommendations</h1>
+    </div>
+
+    <div class="movie-list flex">
+      <div *ngFor="let movie of rcmdMovieList">
+        <div class="posters" (click)="goToDetail(movie['id']!)">
+          <span>
+            <img 
+              
+              [src]="'https://image.tmdb.org/t/p/w220_and_h330_face/' + movie['poster_path']"/>
+          </span>
+            <div class="overview">
+                <p>{{ movie["title"] }}</p>
+            </div>
+        </div>
+        
+      </div>
+    </div>
+    <h2>End of Results</h2>
+</div>
+

@@ -1,82 +1,202 @@
 <app-navbar></app-navbar>
 
-<!-- LOGIN BTN GOES TO LOGIN COMPONENT  -->
-<!-- <div>login</div>
-<button (click)="login()">Login Here</button>
-<button>Get Movies</button> -->
+<!-- <button>Get Movies</button> -->
+<div class="dummy-body">
 
-<!-- popular movies  -->
-<div class="flex">
-  <div *ngFor="let movie of popularMovieList">
-    <div class="posters">
-      <span>
-        <img
-          [src]="
-            'https://image.tmdb.org/t/p/w220_and_h330_face/' +
-            movie['poster_path']
-          "
-          width="180px"
-          height="280px"
-        />
-        <p>{{ movie["title"] }}</p>
-      </span>
+  <!-- TAILWIND CAROUSEL TEST  -->
+  
+
+  <!-- CAROUSEL -->
+  <div class="carousel"
+    data-flickity='{ "wrapAround": true,"autoPlay": 3000, "pauseAutoPlayOnHover": true }'
+  >
+    <!-- cell no.1  -->
+    <div class="flex carousel-cell">
+      <ng-container *ngFor="let movie of popularMovieList; let i = index">
+        <div *ngIf="i < 1">
+          <span class="carousel-img">
+            <img
+              (click)="goToDetail(movie['id']!)"
+              [src]="
+                'https://image.tmdb.org/t/p/original/' + movie['backdrop_path']
+              "
+              data-flickity-lazyload="full.jpg"
+            />
+            <div class="movie-details">
+              <h2>{{ movie["title"] }}</h2>
+              <span>{{ movie["overview"] }}</span>
+            </div>
+          </span>
+        </div>
+      </ng-container>
     </div>
+
+    <!-- cell no.2  -->
+    <div class="flex carousel-cell">
+      <ng-container *ngFor="let movie of topRatedList; let i = index">
+        <div *ngIf="i < 1">
+          <span class="carousel-img">
+            <img
+              (click)="goToDetail(movie['id']!)"
+              [src]="
+                'https://image.tmdb.org/t/p/original/' + movie['backdrop_path']
+              "
+            />
+            <div class="movie-details">
+              <h2>{{ movie["title"] }}</h2>
+              <span>{{ movie["overview"] }}</span>
+            </div>
+          </span>
+        </div>
+      </ng-container>
+    </div>
+
+    <!-- cell no.3    -->
+    <div class="flex carousel-cell">
+      <ng-container
+        *ngFor="let movie of nowPlayingList | slice : 2; let i = index"
+      >
+        <div *ngIf="i < 1">
+          <span class="carousel-img">
+            <img
+              (click)="goToDetail(movie['id']!)"
+              [src]="
+                'https://image.tmdb.org/t/p/original/' + movie['backdrop_path']
+              "
+            />
+            <div class="movie-details">
+              <h2>{{ movie["title"] }}</h2>
+              <span>{{ movie["overview"] }}</span>
+            </div>
+          </span>
+        </div>
+      </ng-container>
+    </div>
+
+    <!-- cell no.4  -->
+    <div class="flex carousel-cell">
+      <ng-container
+        *ngFor="let movie of upComingList | slice : 3; let i = index"
+      >
+        <div *ngIf="i < 1">
+          <span class="carousel-img">
+            <img
+              (click)="goToDetail(movie['id']!)"
+              [src]="
+                'https://image.tmdb.org/t/p/original/' + movie['backdrop_path']
+              "
+            />
+            <div class="movie-details">
+              <h2>{{ movie["title"] }}</h2>
+              <span>{{ movie["overview"] }}</span>
+            </div>
+          </span>
+        </div>
+      </ng-container>
+    </div>
+
+    <!-- cell no.5  -->
+    <div class="flex carousel-cell">
+      <ng-container
+        *ngFor="let movie of popularMovieList | slice : 15; let i = index"
+      >
+        <div *ngIf="i < 1">
+          <span class="carousel-img">
+            <img
+              (click)="goToDetail(movie['id']!)"
+              [src]="
+                'https://image.tmdb.org/t/p/original/' + movie['backdrop_path']
+              "
+            />
+            <div class="movie-details">
+              <h2>{{ movie["title"] }}</h2>
+              <span>{{ movie["overview"] }}</span>
+            </div>
+          </span>
+        </div>
+      </ng-container>
+    </div>
+
+    <!-- cell no.6  -->
+    <div class="flex carousel-cell">
+      <ng-container
+        *ngFor="let movie of popularMovieList | slice : 13; let i = index"
+      >
+        <div *ngIf="i < 1">
+          <span class="carousel-img">
+            <img
+              (click)="goToDetail(movie['id']!)"
+              [src]="
+                'https://image.tmdb.org/t/p/original/' + movie['backdrop_path']
+              "
+            />
+            <div class="movie-details">
+              <h2>{{ movie["title"] }}</h2>
+              <span>{{ movie["overview"] }}</span>
+            </div>
+          </span>
+        </div>
+      </ng-container>
+    </div>
+
+    <!-- cell no.7  -->
+    <div class="flex carousel-cell">
+      <ng-container
+        *ngFor="let movie of popularMovieList | slice : 5; let i = index"
+      >
+        <div *ngIf="i < 1">
+          <span class="carousel-img">
+            <img
+              (click)="goToDetail(movie['id']!)"
+              [src]="
+                'https://image.tmdb.org/t/p/original/' + movie['backdrop_path']
+              "
+            />
+            <div class="movie-details">
+              <h2>{{ movie["title"] }}</h2>
+              <span>{{ movie["overview"] }}</span>
+            </div>
+          </span>
+        </div>
+      </ng-container>
+    </div>
+  </div>
+
+  <!-- HEADING AND INTRODUCTION -->
+  <div class="intro">
+    <h1>Cinematic Wonders Await</h1>
+    <h3>
+      Be the first to witness movie magic with PMovie Premieres. Get exclusive
+      access to trailers, behind-the-scenes content, and sneak peeks. Stay ahead
+      of the curve and be part of the movie conversation.
+    </h3><br>
+    <i class='bx bxs-chevron-down bx-fade-up' style='color:#ffffff' ></i>
+  </div>
+
+  <!-- MOVIE LISTS  -->
+  <div class="list-wrapper flex">
+    <span #popular></span>
+    <app-movielist
+      category="Popular Movies"
+      [movieList]="popularMovieList"
+    ></app-movielist>
+    <span id="toprated"></span>
+    <app-movielist
+      category="Top-Rated Movies"
+      [movieList]="topRatedList"
+    ></app-movielist>
+    <span id="nowplaying"></span>
+    <app-movielist
+      category="Now-Playing Movies"
+      [movieList]="nowPlayingList"
+    ></app-movielist>
+    <span id="upcoming"></span>
+    <app-movielist
+      category="Upcoming Movies"
+      [movieList]="upComingList"
+    ></app-movielist>
   </div>
 </div>
 
-<!-- now-playing movies  -->
-<div class="flex">
-  <div *ngFor="let movie of nowPlayingList">
-    <div class="posters">
-      <span>
-        <img
-          [src]="
-            'https://image.tmdb.org/t/p/w220_and_h330_face/' +
-            movie['poster_path']
-          "
-          width="180px"
-          height="280px"
-        />
-        <p>{{ movie["title"] }}</p>
-      </span>
-    </div>
-  </div>
-</div>
-
-<!-- top-rated movies  -->
-<div class="flex">
-  <div *ngFor="let movie of topRatedList">
-    <div class="posters">
-      <span>
-        <img
-          [src]="
-            'https://image.tmdb.org/t/p/w220_and_h330_face/' +
-            movie['poster_path']
-          "
-          width="180px"
-          height="280px"
-        />
-        <p>{{ movie["title"] }}</p>
-      </span>
-    </div>
-  </div>
-</div>
-
-<!-- upcoming  -->
-<div class="flex">
-  <div *ngFor="let movie of upComingList">
-    <div class="posters">
-      <span>
-        <img
-          [src]="
-            'https://image.tmdb.org/t/p/w220_and_h330_face/' +
-            movie['poster_path']
-          "
-          width="180px"
-          height="280px"
-        />
-        <p>{{ movie["title"] }}</p>
-      </span>
-    </div>
-  </div>
-</div>
+<!-- FOOTER SECTION  -->
+<app-footer></app-footer>

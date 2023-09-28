@@ -120,10 +120,9 @@
 
 /* BIG TEXT  */
 .desc {
-    height: 92vh;
+    height: 85vh;
     flex-direction: column;
     justify-content: flex-end;
-
     font-size: 2.6rem;
 }
 

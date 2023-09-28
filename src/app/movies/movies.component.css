@@ -1,22 +1,80 @@
 /* these go to the movies page (component) */
 
+
+/* CAROUSEL  */
+.carousel {
+  background: #ffffff00;
+  /* padding: 0 4.5rem; */
+}
+
+.carousel-cell {
+  /* background: #8C8; */
+  overflow: hidden !important;
+  width: 50rem;
+  height: 28rem;
+  margin-right: 10px;
+  border-radius: 5px;
+  cursor: pointer !important;
+}
+
+.carousel-img img {
+  width: 100%;
+  object-fit: cover;
+}
+
+.carousel-cell .carousel-img .movie-details {
+  background: rgb(0, 0, 0);
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.801) 75%, rgba(0, 0, 0, 0.507) 85%, rgba(255, 255, 255, 0) 100%);
+  /* height: 50%; */
+  padding: 0 2rem 1rem;
+  position: absolute;
+  bottom: 0;
+}
+
+.carousel-cell .carousel-img .movie-details span {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  line-height: 20px;
+  max-height: 5rem;
+  max-width: 100%;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+}
+
+/* HEADING AND INTRO  */
+.intro {
+  /* background-color: #0000004f; */
+  margin-top: 1.8rem;
+  padding: 2rem 1.8rem 0;
+  text-align: center;
+  font-size: 1.3rem;
+}
+
+.intro h3 {
+  font-weight: 300;
+}
+
+/* MOVIES LISTS */
 .flex {
-    position: relative;
-    display: flex;
-    overflow: auto;
-    gap: 3em;
-    justify-content: flex-start;
+  position: relative;
+  display: flex;
+  overflow: auto;
+  gap: 2em;
+  justify-content: flex-start;
 }
-.posters {
-    background: red;
-    position: relative;
+
+.dummy-body {
+  justify-content: center;
+  align-items: center;
 }
-.posters p {
-    background-color: rgba(0, 0, 0, 0.521);
-    color: #fff;
-    font-size: 20px;
-    position: absolute;
-    top: 80%;
-    left: 50%;
-    transform: translate(-50%,-50%);
-} 
+
+.list-wrapper {
+  /* background-color: #7f2cdf8c; */
+  /* position: absolute; */
+  margin: 0 0 5rem;
+  left: 5%;
+  top: 0;
+  width: 90%;
+  flex-direction: column;
+}
