@@ -7,6 +7,7 @@ import { SignupComponent } from './signup/signup.component';
 import { NotfoundComponent } from './notfound/notfound.component';
 import { MoviesComponent } from './movies/movies.component';
 import { DetailComponent } from './detail/detail.component';
+import { AuthGuard } from './services/auth.guard';
 
 const routes: Routes = [
   {
@@ -23,15 +24,18 @@ const routes: Routes = [
   },
   {
     path: 'home',
-    component: HomeComponent
+    component: HomeComponent,
+    canActivate: [AuthGuard]
   }, 
   {
     path: 'movies',
-    component: MoviesComponent
+    component: MoviesComponent,
+    canActivate: [AuthGuard]
   },
   {
     path: 'detail/:movieid',
-    component: DetailComponent
+    component: DetailComponent,
+    canActivate: [AuthGuard]
   },
   {
     path: "**", //wildcard

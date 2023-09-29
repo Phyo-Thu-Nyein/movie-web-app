@@ -87,6 +87,8 @@ export class MoviesComponent implements OnInit {
     });
   }
 
+  
+  
   // reloadPage() {
   //   window.location.reload();
   //   console.log("it works, the reloading");

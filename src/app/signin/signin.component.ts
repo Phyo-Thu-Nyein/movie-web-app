@@ -5,6 +5,7 @@ import { ApiService } from '../services/api.service';
 import { HttpErrorResponse } from '@angular/common/http';
 import { Router } from '@angular/router';
 import { LoginUserDetails } from '../interface/form-login-userdetails';
+import { CookieService } from 'ngx-cookie-service';
 
 @Component({
   selector: 'app-signin',
@@ -13,7 +14,7 @@ import { LoginUserDetails } from '../interface/form-login-userdetails';
 })
 export class SigninComponent {
   @ViewChild('loginform') LoginForm?: NgForm;
-  constructor(private apiService: ApiService, private router: Router) {}
+  constructor(private apiService: ApiService, private router: Router, private cookieService: CookieService) {}
 
   // loginForm = new FormGroup(
   //   {
@@ -38,6 +39,7 @@ export class SigninComponent {
       next: (response: LoginUserDetails) => {
         if (response.status == 'success') {
           console.log(response);
+          this.cookieService.set('token', response.token!);
           this.router.navigateByUrl('movies');
           // navigate to home
         }

@@ -1,0 +1,145 @@
+
+  <!-- CAROUSEL -->
+  <div class="carousel"
+    data-flickity='{ "wrapAround": true,"autoPlay": 3000, "pauseAutoPlayOnHover": true }'
+  >
+    
+    <div class="flex carousel-cell">
+      <ng-container >
+        <div >
+          <span class="carousel-img">
+            <img
+              (click)="goToDetail(popularMovieList[0]['id']!)"
+              [src]="
+                'https://image.tmdb.org/t/p/original/' + popularMovieList[0]['backdrop_path']
+              "
+              data-flickity-lazyload="full.jpg"
+            />
+            <div class="movie-details">
+              <h2>{{ popularMovieList[0]["title"] }}</h2>
+              <span>{{ popularMovieList[0]["overview"] }}</span>
+            </div>
+          </span>
+        </div>
+      </ng-container>
+    </div>
+
+    
+    <div class="flex carousel-cell">
+      <ng-container >
+        <div >
+          <span class="carousel-img">
+            <img
+              (click)="goToDetail(topRatedList[0]['id']!)"
+              [src]="
+                'https://image.tmdb.org/t/p/original/' + topRatedList[0]['backdrop_path']
+              "
+            />
+            <div class="movie-details">
+              <h2>{{ topRatedList[0]["title"] }}</h2>
+              <span>{{ topRatedList[0]["overview"] }}</span>
+            </div>
+          </span>
+        </div>
+      </ng-container>
+    </div>
+
+    
+    <div class="flex carousel-cell">
+      <ng-container>
+        <div>
+          <span class="carousel-img">
+            <img
+              (click)="goToDetail(nowPlayingList[3]['id']!)"
+              [src]="
+                'https://image.tmdb.org/t/p/original/' + nowPlayingList[3]['backdrop_path']
+              "/>
+            <div class="movie-details">
+              <h2>{{ nowPlayingList[3]["title"] }}</h2>
+              <span>{{ nowPlayingList[3]["overview"] }}</span>
+            </div>
+          </span>
+        </div>
+      </ng-container>
+    </div>
+
+    
+    <div class="flex carousel-cell">
+      <ng-container>
+        <div>
+          <span class="carousel-img">
+            <img
+              (click)="goToDetail(upComingList[3]['id']!)"
+              [src]="
+                'https://image.tmdb.org/t/p/original/' + upComingList[3]['backdrop_path']
+              "
+            />
+            <div class="movie-details">
+              <h2>{{ upComingList[3]["title"] }}</h2>
+              <span>{{ upComingList[3]["overview"] }}</span>
+            </div>
+          </span>
+        </div>
+      </ng-container>
+    </div>
+
+    
+    <div class="flex carousel-cell">
+      <ng-container>
+        <div>
+          <span class="carousel-img">
+            <img
+              (click)="goToDetail(popularMovieList[15]['id']!)"
+              [src]="
+                'https://image.tmdb.org/t/p/original/' + popularMovieList[15]['backdrop_path']
+              "
+            />
+            <div class="movie-details">
+              <h2>{{ popularMovieList[15]["title"] }}</h2>
+              <span>{{ popularMovieList[15]["overview"] }}</span>
+            </div>
+          </span>
+        </div>
+      </ng-container>
+    </div>
+
+    
+    <div class="flex carousel-cell">
+      <ng-container>
+        <div>
+          <span class="carousel-img">
+            <img
+              (click)="goToDetail(popularMovieList[13]['id']!)"
+              [src]="
+                'https://image.tmdb.org/t/p/original/' + popularMovieList[13]['backdrop_path']
+              "
+            />
+            <div class="movie-details">
+              <h2>{{ popularMovieList[13]["title"] }}</h2>
+              <span>{{ popularMovieList[13]["overview"] }}</span>
+            </div>
+          </span>
+        </div>
+      </ng-container>
+    </div>
+
+    
+    <div class="flex carousel-cell">
+      <ng-container>
+        <div>
+          <span class="carousel-img">
+            <img
+              (click)="goToDetail(popularMovieList[5]['id']!)"
+              [src]="
+                'https://image.tmdb.org/t/p/original/' + popularMovieList[5]['backdrop_path']
+              "
+            />
+            <div class="movie-details">
+              <h2>{{ popularMovieList[5]["title"] }}</h2>
+              <span>{{ popularMovieList[5]["overview"] }}</span>
+            </div>
+          </span>
+        </div>
+      </ng-container>
+    </div>
+  </div>

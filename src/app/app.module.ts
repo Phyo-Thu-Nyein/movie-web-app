@@ -17,6 +17,9 @@ import { DetailComponent } from './detail/detail.component';
 import { MovielistComponent } from './movielist/movielist.component';
 import { FooterComponent } from './footer/footer.component';
 import { RecommendationsComponent } from './recommendations/recommendations.component';
+import { CookieService } from 'ngx-cookie-service';
+import { NgxSkeletonLoaderModule } from 'ngx-skeleton-loader';
+import { CarouselComponent } from './carousel/carousel.component';
 
 @NgModule({
   declarations: [
@@ -31,16 +34,18 @@ import { RecommendationsComponent } from './recommendations/recommendations.comp
     DetailComponent,
     MovielistComponent,
     FooterComponent,
-    RecommendationsComponent
+    RecommendationsComponent,
+    CarouselComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    NgxSkeletonLoaderModule
   ],
-  providers: [],
+  providers: [ CookieService ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -43,7 +43,7 @@ export class RecommendationsComponent implements OnInit {
   }
   
   goToDetail(movieID: number) {
-    this.router.navigateByUrl(`detail/${movieID}`);
+    this.router.navigate([`detail/${movieID}`]);
   }
 
   ngOnDestroy() {
