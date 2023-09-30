@@ -1,0 +1,96 @@
+<!-- SKELETON LOADER  -->
+<div class="skeleton flex">
+  <div class="item flex">
+    <div class="skele-poster">
+      <ngx-skeleton-loader
+        count="1"
+        appearance="circle"
+        [theme]="{
+          'border-radius': '10px',
+          width: '17rem',
+          height: '25rem',
+          'background-color': 'gray'
+        }"
+      ></ngx-skeleton-loader>
+    </div>
+
+    <div class="skele-details">
+      <div class="skele-title">
+        <ngx-skeleton-loader
+          appearance="line"
+          [theme]="{
+            width: '12rem',
+            height: '4rem',
+            'background-color': 'gray'
+          }"
+        ></ngx-skeleton-loader>
+      </div>
+      <div class="skele-rating flex">
+        <ngx-skeleton-loader
+          count="2"
+          appearance="line"
+          [theme]="{
+            width: '5rem',
+            height: '1.8rem',
+            'margin-right': '2rem',
+            'background-color': 'gray'
+          }"
+        ></ngx-skeleton-loader>
+      </div>
+      <div class="skele-btn">
+        <ngx-skeleton-loader
+          appearance="line"
+          [theme]="{
+            width: '8rem',
+            height: '3rem',
+            'background-color': 'gray'
+          }"
+        ></ngx-skeleton-loader>
+      </div>
+      <div class="skele-overview">
+        <ngx-skeleton-loader
+          appearance="line"
+          [theme]="{
+            width: '8rem',
+            height: '1.5rem',
+            'background-color': 'gray'
+          }"
+        ></ngx-skeleton-loader>
+        <ngx-skeleton-loader
+          class="lines flex"
+          count="3"
+          appearance="line"
+          [theme]="{
+            width: '55rem',
+            'background-color': 'gray'
+          }"
+        ></ngx-skeleton-loader>
+      </div>
+      <br />
+      <div class="skele-more-details flex">
+        <div>
+          <ngx-skeleton-loader
+            class="left-side flex"
+            count="3"
+            appearance="line"
+            [theme]="{
+              width: '26rem',
+              'background-color': 'gray'
+            }"
+          ></ngx-skeleton-loader>
+        </div>
+        <div>
+          <ngx-skeleton-loader
+            class="right-side flex"
+            count="3"
+            appearance="line"
+            [theme]="{
+              width: '26rem',
+              'background-color': 'gray'
+            }"
+          ></ngx-skeleton-loader>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

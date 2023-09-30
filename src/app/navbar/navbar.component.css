@@ -4,14 +4,21 @@
 }
 
 .mynavbar {
-    /* background-color: #062c3b33;
-    backdrop-filter: blur(10px); */
+    background-color: #50505033;
+    -webkit-backdrop-filter: blur(6px);
+    backdrop-filter: blur(6px);
+    width: 100%;
     font-size: 1.2em;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.116);
     padding: .65% 5%;
-    justify-content: flex-start;
+    justify-content: space-between;
     gap: 5em;
+    position: fixed;
+    
+    z-index: 300;
 }
 .mynavbar .brand {
+    /* outline: 2px solid red; */
     cursor: pointer;
 }
 .mynavbar .brand a {
@@ -52,10 +59,11 @@
 }
 
 .mynavbar .links {
-    /* background-color: rgb(155, 168, 180); */
+    /* outline: 2px solid red; */
     justify-content: center;
     gap: 1rem;
     cursor: pointer;
+    transform: translateX(-2rem);
 }
 .mynavbar .links li {
     font-weight: 400;
@@ -80,4 +88,18 @@
 }
 .mynavbar .links a:hover {
     color: var(--clr-cyan300);
+}
+
+.mynavbar .logout {
+    /* outline: 2px solid red; */
+    padding: .3rem;
+    border: 1px solid rgba(255, 255, 255, 0);
+    border-radius: .2rem;
+    opacity: .7;
+    cursor: pointer;
+}
+.mynavbar .logout:hover, .logout:hover i, .logout:hover a {
+    border-color : rgba(255, 191, 161, 0.719);
+    color: rgb(255, 163, 151);
+    opacity: 1;
 }

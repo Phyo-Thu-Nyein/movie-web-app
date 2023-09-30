@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
+import { CookieService } from 'ngx-cookie-service';
 
 @Component({
   selector: 'app-navbar',
@@ -6,7 +8,12 @@ import { Component } from '@angular/core';
   styleUrls: ['./navbar.component.css']
 })
 export class NavbarComponent {
-  scroll(el: HTMLElement) {
-    el.scrollIntoView({behavior: 'smooth'});
-}
+  
+  constructor(private router: Router, private cookieService: CookieService) { }
+  
+  logout() {
+    this.cookieService.delete('token');
+    this.router.navigateByUrl('');
+  }
+
 }

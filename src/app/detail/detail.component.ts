@@ -7,6 +7,8 @@ import { Cast, CastDetails } from '../interface/cast-details';
 import { TrailerDetails, trailerResult } from '../interface/trailer-details';
 import { ActivatedRoute } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
+import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
+
 
 @Component({
   selector: 'app-detail',
@@ -14,12 +16,23 @@ import { HttpClient } from '@angular/common/http';
   styleUrls: ['./detail.component.css'],
 })
 export class DetailComponent implements OnInit {
-  constructor(private apiService: ApiService, private activatedRoute:ActivatedRoute, private http: HttpClient) {}
+  constructor(
+    private apiService: ApiService,
+    private activatedRoute: ActivatedRoute,
+    private http: HttpClient,
+    private sanitizer: DomSanitizer) { 
+
+    }
 
   movieSub: Subscription = new Subscription();
   castSub: Subscription = new Subscription();
   trailerSub: Subscription = new Subscription();
 
+  safeSrc?: SafeResourceUrl;
+  ytUrl: string = '';
+
+  //SKELETON LOADER 
+  loading: boolean = true;
 
   //MOVIE DETAILS
   movieID!: number;
@@ -42,15 +55,25 @@ export class DetailComponent implements OnInit {
 
   ngOnInit() {
     this.movieID = this.activatedRoute.snapshot.params['movieid'];
-    console.log(this.movieID);
+    // console.log(this.movieID);
+    
     this.getMovieDetails();
     this.getCasts();
     this.getTrailerKey();
     console.log('give me the trailer key right below');
     console.log(this.trailerKey);
     this.trailerYT();
+
+
+    setTimeout(() => {
+      this.loading = false;
+    }, 1500);
+    // this.loading = false;
   }
 
+  getYtEmbed() {
+    var result = this.apiService.getYtEmbed(this.movieID);
+  }
 
   getMovieDetails() {
     var result = this.apiService.getDetails(this.movieID);
@@ -94,19 +117,24 @@ export class DetailComponent implements OnInit {
   }
 
   getTrailerKey() {
-    var result = this.apiService.getTrailer(this.movieID);
+    var result =  this.apiService.getTrailer(this.movieID);
     this.trailerSub = result.subscribe({
       next: (response: TrailerDetails) => {
         this.trailer = response['results']!;
-
+        // this.ytUrl = `https://www.youtube.com/embed/${this.trailerKey}?controls=0&autoplay=1&mute=1&playsinline=1&playlist=${this.trailerKey}&loop=1`;
+ 
         //getting a trailer (not teaser, not promo, etc.)
-        for (let i = 0; i < this.trailer.length; i++) {
+         for (let i = 0; i < this.trailer.length; i++) {
           if (this.trailer[i].type == "Trailer") {
             this.trailerKey = this.trailer[i].key!;
             break;
-        }
-        }
-        
+          }
+         }
+         console.log("trailer key here")
+         console.log(this.trailerKey);
+ 
+        this.safeSrc = this.sanitizer.bypassSecurityTrustResourceUrl(`https://www.youtube.com/embed/${this.trailerKey}?controls=0&autoplay=1&mute=1&playsinline=1&playlist=${this.trailerKey}&loop=1`);
+
 
         // this.trailerKey = this.trailer[4].key!;
         // this.trailerSize = this.trailer[0].size!;

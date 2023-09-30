@@ -1,9 +1,10 @@
 import { HttpErrorResponse } from '@angular/common/http';
-import { Component } from '@angular/core';
+import { Component, ElementRef, ViewChild } from '@angular/core';
 import { Movie, Result } from '../interface/movie-result';
 import { ApiService } from '../services/api.service';
 import { Router, ActivatedRoute } from '@angular/router';
 import { Subscription } from 'rxjs';
+import * as Flickity from 'flickity';
 
 @Component({
   selector: 'app-carousel',
@@ -13,6 +14,14 @@ import { Subscription } from 'rxjs';
 export class CarouselComponent {
   constructor(private apiService: ApiService, private router: Router, private activatedRoute:ActivatedRoute) {  }
 
+  @ViewChild('carousel') carousel!: ElementRef;
+  ngAfterViewInit(): void {
+    const flkty = new Flickity(this.carousel.nativeElement, {
+      wrapAround: true,
+      autoPlay: 2500,
+     lazyLoad: true
+    });
+   }
   // mySubscription: Subscription = new Subscription();
   movieSub: Subscription = new Subscription();
 

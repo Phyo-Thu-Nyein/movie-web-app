@@ -3,17 +3,49 @@
     align-items: center;
 }
 
+/* YT EMBEDED BACKGROUND VID  */
+.video-container{
+    overflow: hidden;
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    max-width: 100%;
+    z-index: 1;
+  }
+iframe {
+    /* position: absolute; */
+    /* top: 50%;
+    left: 50%; */
+    width: 100vw;
+    height: 100vh;
+    transform: scale(1.37);
+    /* transform: translate(-50%, -50%); */
+    pointer-events: none;
+  }
+  @media (min-aspect-ratio: 16/9) {
+    .video-container {
+      width: 100%;
+      height: auto;
+    }
+  }
+  @media (max-aspect-ratio: 16/9) {
+    .video-container {
+      width: auto;
+      height: 100%;
+    }
+  }
+
 /* BACKDROP IMG LINK  */
 .bk-img {
     position: absolute;
     width: 100vw;
-    height: 92vh;
+    height: 100vh;
     max-width: 100%;
     opacity: .3;
 }
 .bk-img img {
     width: 100%;
-    height: 92vh;
+    height: 100%;
     object-fit: cover;
 }
 
@@ -22,19 +54,20 @@
     padding-left: 10%;
     gap: 3rem;
     width: 100vw;
-    height: 92vh;
+    height: 100vh;
     max-width: 100%;
 }
 
 .detail-wrapper .poster {
     /* background-color: rgba(240, 248, 255, 0.568); */
     /* padding-top: .65rem; */
-    height: 65%;
+    height: 55%;
     z-index: 1;
 }
 .detail-wrapper .poster img {
     border-radius: 10px;
-    width: 18vw;
+    width: 17rem;
+    height: 25rem;
 }
 
 /* all span tags  */
@@ -49,7 +82,7 @@ span {
     font-size: 1.1rem;
     gap: 1rem;
     width: 70%;
-    height: 65%;
+    height: 55%;
     z-index: 1;
 }
 
@@ -118,7 +151,7 @@ span {
 
 .detail-wrapper .scroll-arrow {
     position: absolute;
-    bottom: 1.5rem;
+    bottom: 0;
     left: 50%;
 }
 .detail-wrapper .scroll-arrow h3 {

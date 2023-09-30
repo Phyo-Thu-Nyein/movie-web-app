@@ -11,8 +11,20 @@ export class ApiService {
   baseUrl: string = 'https://api.themoviedb.org/3/movie/';
   apiKey: string = 'e5b98fbae855f763ab386ead4da9c365';
 
+  // YT EMBED BG VID 
+  // https://www.youtube.com/embed/4wxyy8Rcz4k?controls=0&autoplay=1&mute=1&playsinline=1&playlist=Yj2iELI6OeI&loop=1
+  ytUrlOne: string = 'https://www.youtube.com/embed/';
+  ytUrlTwo: string = '?controls=0&autoplay=1&mute=1&playsinline=1&playlist=';
+  ytUrlThree: string = '&loop=1';
+  
+
   // myAPI key=e5b98fbae855f763ab386ead4da9c365
   //sirAPI key=050c28541f900007285c3020069bfd62
+
+  // getting yt embed vid 
+  getYtEmbed(movieID: number) {
+    return this.http.get(`${this.ytUrlOne}${movieID}${this.ytUrlTwo}${movieID}${this.ytUrlThree}`)
+  }
 
   getMovies(category: string) {
     return this.http.get(

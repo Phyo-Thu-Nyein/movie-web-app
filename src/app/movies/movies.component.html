@@ -44,3 +44,12 @@
 
 <!-- FOOTER SECTION  -->
 <app-footer></app-footer>
+<script>
+  $(window).load(function () {
+$('.main-gallery').flickity({
+    wrapAround: true,
+    freeScroll: true,
+    lazyLoad: 3
+});
+});
+</script>

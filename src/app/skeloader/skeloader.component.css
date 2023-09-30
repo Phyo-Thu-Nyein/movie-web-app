@@ -1,0 +1,42 @@
+/* SKELETON LOADER*/
+.flex {
+    display: flex;
+    align-items: center;
+}
+
+.skeleton {
+    background-color: rgb(0, 0, 0);
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    justify-content: center;
+    /* opacity: .5; */
+    z-index: 100;
+}
+.skeleton .item {
+    /* background-color: black; */
+    justify-content: center;
+    gap: 3rem;
+    width: 100%;
+}
+
+.skele-details {
+    /* background-color: violet; */
+    width: 58.5%;
+}
+
+.skele-details .skele-overview .lines {
+    align-items: flex-start;
+    flex-direction: column;
+}
+
+.skele-details .skele-more-details {
+    gap: 3rem;
+}
+.skele-details .skele-more-details .left-side{
+    flex-direction: column;
+}
+.skele-details .skele-more-details .right-side {
+    flex-direction: column;
+}
+

@@ -20,6 +20,9 @@ import { RecommendationsComponent } from './recommendations/recommendations.comp
 import { CookieService } from 'ngx-cookie-service';
 import { NgxSkeletonLoaderModule } from 'ngx-skeleton-loader';
 import { CarouselComponent } from './carousel/carousel.component';
+import { SkeloaderComponent } from './skeloader/skeloader.component';
+import { PowerPipe } from './services/power.pipe';
+import { HighlightDirective } from './services/highlight.directive';
 
 @NgModule({
   declarations: [
@@ -35,7 +38,10 @@ import { CarouselComponent } from './carousel/carousel.component';
     MovielistComponent,
     FooterComponent,
     RecommendationsComponent,
-    CarouselComponent
+    CarouselComponent,
+    SkeloaderComponent,
+    PowerPipe,
+    HighlightDirective,
   ],
   imports: [
     BrowserModule,
@@ -43,9 +49,9 @@ import { CarouselComponent } from './carousel/carousel.component';
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
-    NgxSkeletonLoaderModule
+    NgxSkeletonLoaderModule,
   ],
-  providers: [ CookieService ],
-  bootstrap: [AppComponent]
+  providers: [CookieService],
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
