@@ -16,18 +16,14 @@ export class SigninComponent {
   @ViewChild('loginform') LoginForm?: NgForm;
   constructor(private apiService: ApiService, private router: Router, private cookieService: CookieService) {}
 
-  // loginForm = new FormGroup(
-  //   {
-  //     email : new FormControl('', [Validators.required, Validators.email]),
-  //     password : new FormControl('', [Validators.required, Validators.minLength(4)]),
-  //   }
-  // )
-  date = Date.now();
+  // date = Date.now();
 
   email: string = '';
   password: string = '';
+  loading: boolean = false;
 
   login() {
+    this.loading = true;
     // console.log(this.LoginForm?.value);
     var result = this.apiService.login(
       {
@@ -51,5 +47,6 @@ export class SigninComponent {
         alert(message);
       },
     });
+    
   }
 }

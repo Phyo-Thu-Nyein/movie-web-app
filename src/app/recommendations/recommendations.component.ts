@@ -26,6 +26,7 @@ export class RecommendationsComponent implements OnInit {
     this.getRcmdMovies();
   }
 
+
   getRcmdMovies() {
     var result = this.apiService.getRcmdMovies(this.rcmdMovieID);
     this.rcmdSub = result.subscribe({
@@ -43,7 +44,10 @@ export class RecommendationsComponent implements OnInit {
   }
   
   goToDetail(movieID: number) {
+    this.router.routeReuseStrategy.shouldReuseRoute = () => false;
+    this.router.onSameUrlNavigation = 'reload';
     this.router.navigate([`detail/${movieID}`]);
+
   }
 
   ngOnDestroy() {

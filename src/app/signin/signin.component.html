@@ -23,14 +23,12 @@
             id="email"
             placeholder="Email"
             [(ngModel)]="email"
-            required 
+            required
             minlength="4"
-            #mail = "ngModel"
+            #mail="ngModel"
           />
           <!-- EMAIL ERROR  -->
-          <span
-            *ngIf="!mail.valid && mail.touched"
-            class="error mail-error">
+          <span *ngIf="!mail.valid && mail.touched" class="error mail-error">
             Email is left blank or wrong!
           </span>
         </div>
@@ -43,15 +41,13 @@
             name="password"
             id="password"
             placeholder="Password"
-            [(ngModel)] = "password"
+            [(ngModel)]="password"
             required
             minlength="4"
-            #pass = "ngModel"
+            #pass="ngModel"
           />
           <!-- PASSWORD ERROR -->
-          <span
-            *ngIf="!pass.valid && pass.touched"
-            class="error psw-error">
+          <span *ngIf="!pass.valid && pass.touched" class="error psw-error">
             Password is left blank or wrong!
           </span>
         </div>
@@ -64,14 +60,19 @@
         </label>
         <a href="">Forgot Password?</a>
       </div>
-      
+
       <div class="row button-box">
         <button
           type="submit"
           id="login"
           [disabled]="!mail.valid || !pass.valid"
         >
-          Login
+          <ng-container *ngIf="loading else btn">
+            <app-spinloader></app-spinloader>
+          </ng-container>
+          <ng-template #btn>
+            Login
+          </ng-template>
         </button>
       </div>
       <div class="row link-box">

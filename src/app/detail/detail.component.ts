@@ -57,30 +57,19 @@ export class DetailComponent implements OnInit {
     this.movieID = this.activatedRoute.snapshot.params['movieid'];
     // console.log(this.movieID);
     
-    this.getMovieDetails();
     this.getCasts();
     this.getTrailerKey();
-    console.log('give me the trailer key right below');
-    console.log(this.trailerKey);
     this.trailerYT();
-
-
-    setTimeout(() => {
-      this.loading = false;
-    }, 1500);
-    // this.loading = false;
+    this.getMovieDetails();
+    
   }
 
-  getYtEmbed() {
-    var result = this.apiService.getYtEmbed(this.movieID);
-  }
 
   getMovieDetails() {
     var result = this.apiService.getDetails(this.movieID);
     this.movieSub = result.subscribe({
       next: (response: MovieDetails) => {
         this.bg_path = response.backdrop_path!;
-        console.log(this.bg_path);
         this.poster = response.poster_path!;
         this.movieTitle = response.title!;
         this.rating = response.vote_average!;
@@ -91,6 +80,7 @@ export class DetailComponent implements OnInit {
         this.genres = response['genres']!;
         this.countries = response['production_countries']!;
         this.companies = response['production_companies']!;
+        this.loading = false;
       },
       error: (err: HttpErrorResponse) => {
         console.log(err);
@@ -123,13 +113,20 @@ export class DetailComponent implements OnInit {
         this.trailer = response['results']!;
         // this.ytUrl = `https://www.youtube.com/embed/${this.trailerKey}?controls=0&autoplay=1&mute=1&playsinline=1&playlist=${this.trailerKey}&loop=1`;
  
-        //getting a trailer (not teaser, not promo, etc.)
+        //getting a teaser or trailer (not promo, interview or anything else.)
          for (let i = 0; i < this.trailer.length; i++) {
-          if (this.trailer[i].type == "Trailer") {
+          if (this.trailer[i].type == "Trailer" ) {
             this.trailerKey = this.trailer[i].key!;
             break;
           }
+          for (let i = 0; i < this.trailer.length; i++) {
+            if (this.trailer[i].type == "Teaser") {
+              this.trailerKey = this.trailer[i].key!;
+              break;
+            }
+          }
          }
+        
          console.log("trailer key here")
          console.log(this.trailerKey);
  
@@ -150,7 +147,9 @@ export class DetailComponent implements OnInit {
   trailerYT() {
     // alert("hihi button working");
     return this.http.get(`https://www.youtube.com/watch?v=${this.trailerKey}`);
+    
   }
+  
 
   ngOnDestroy() {
     if (this.movieSub) {

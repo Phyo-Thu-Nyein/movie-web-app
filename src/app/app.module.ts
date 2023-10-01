@@ -23,6 +23,7 @@ import { CarouselComponent } from './carousel/carousel.component';
 import { SkeloaderComponent } from './skeloader/skeloader.component';
 import { PowerPipe } from './services/power.pipe';
 import { HighlightDirective } from './services/highlight.directive';
+import { SpinloaderComponent } from './spinloader/spinloader.component';
 
 @NgModule({
   declarations: [
@@ -42,6 +43,7 @@ import { HighlightDirective } from './services/highlight.directive';
     SkeloaderComponent,
     PowerPipe,
     HighlightDirective,
+    SpinloaderComponent,
   ],
   imports: [
     BrowserModule,

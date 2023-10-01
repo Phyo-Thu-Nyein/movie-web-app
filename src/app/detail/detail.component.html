@@ -1,11 +1,11 @@
 <app-navbar></app-navbar>
 
 <!-- SKELETON LOADER FOR DETAIL PAGE  -->
-<ng-container *ngIf="loading; else content">
+<ng-container *ngIf="loading else detailcontent">
   <app-skeloader></app-skeloader>
 </ng-container>
 
-<ng-template #content>
+<ng-template #detailcontent>
 
   <div class="video-container">
     <iframe [src]="safeSrc"></iframe>

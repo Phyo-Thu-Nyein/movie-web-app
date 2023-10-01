@@ -21,7 +21,8 @@ export class CarouselComponent {
       autoPlay: 2500,
      lazyLoad: true
     });
-   }
+  }
+  
   // mySubscription: Subscription = new Subscription();
   movieSub: Subscription = new Subscription();
 
