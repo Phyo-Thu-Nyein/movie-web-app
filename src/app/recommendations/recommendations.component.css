@@ -31,13 +31,13 @@
 .movie-list {
     background-color: #082d3346;
     flex-wrap: wrap;
-    
+    justify-content: center;
     border-radius: .6rem;
     padding: 2%;
     margin: 0 5.5rem;
     width: auto;
     height: auto;
-    gap: .5%;
+    gap: 2.5%;
 }
 
 .posters {
@@ -47,7 +47,7 @@
     cursor: pointer;
     position: relative;
     width: 9.3rem;
-    margin: .5rem .7rem;
+    /* margin: .5rem .7rem; */
 }
 .posters img {
     width: 100%;
