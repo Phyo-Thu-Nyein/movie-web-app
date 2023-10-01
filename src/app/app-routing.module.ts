@@ -8,6 +8,7 @@ import { NotfoundComponent } from './notfound/notfound.component';
 import { MoviesComponent } from './movies/movies.component';
 import { DetailComponent } from './detail/detail.component';
 import { AuthGuard } from './services/auth.guard';
+import { CastDetailsComponent } from './cast-details/cast-details.component';
 
 const routes: Routes = [
   {
@@ -37,6 +38,11 @@ const routes: Routes = [
     component: DetailComponent,
     canActivate: [AuthGuard]
   },
+  {
+    path: 'cast/:castid',
+    component: CastDetailsComponent,
+    canActivate: [AuthGuard]
+  }, 
   {
     path: "**", //wildcard
     component: NotfoundComponent

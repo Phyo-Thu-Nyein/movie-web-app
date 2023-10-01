@@ -25,6 +25,7 @@ import { MovieskeleComponent } from './movieskele/movieskele.component';
 import { PowerPipe } from './services/power.pipe';
 import { HighlightDirective } from './services/highlight.directive';
 import { SpinloaderComponent } from './spinloader/spinloader.component';
+import { CastDetailsComponent } from './cast-details/cast-details.component';
 
 @NgModule({
   declarations: [
@@ -46,6 +47,7 @@ import { SpinloaderComponent } from './spinloader/spinloader.component';
     HighlightDirective,
     SpinloaderComponent,
     MovieskeleComponent,
+    CastDetailsComponent
   ],
   imports: [
     BrowserModule,

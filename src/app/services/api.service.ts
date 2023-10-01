@@ -8,8 +8,8 @@ import { UserDetailsService } from '../interface/userdetails-service';
 export class ApiService {
   constructor(private http: HttpClient) {}
 
-  baseUrl: string = 'https://api.themoviedb.org/3/movie/';
-  apiKey: string = 'e5b98fbae855f763ab386ead4da9c365';
+  baseUrl: string = 'https://api.themoviedb.org/3';
+  apiKey: string = '?api_key=e5b98fbae855f763ab386ead4da9c365';
 
   // YT EMBED BG VID 
   // https://www.youtube.com/embed/4wxyy8Rcz4k?controls=0&autoplay=1&mute=1&playsinline=1&playlist=Yj2iELI6OeI&loop=1
@@ -28,7 +28,7 @@ export class ApiService {
 
   getMovies(category: string) {
     return this.http.get(
-      `${this.baseUrl}${category}?api_key=${this.apiKey}&language=en-US`
+      `${this.baseUrl}/movie/${category}${this.apiKey}&language=en-US`
     );
   }
 
@@ -36,26 +36,38 @@ export class ApiService {
   // https://api.themoviedb.org/3/movie/565770/recommendations?api_key=e5b98fbae855f763ab386ead4da9c365&language=en-US
   getRcmdMovies(movieID: number) {
     return this.http.get(
-      `${this.baseUrl}${movieID}/recommendations?api_key=${this.apiKey}&language=en-US`
+      `${this.baseUrl}/movie/${movieID}/recommendations${this.apiKey}&language=en-US`
     );
   }
 
   getDetails(movieID: number) {
     return this.http.get(
-      `${this.baseUrl}${movieID}?api_key=${this.apiKey}&language=en-US`
+      `${this.baseUrl}/movie/${movieID}${this.apiKey}&language=en-US`
     );
   }
 
   getCasts(movieID: number) {
     return this.http.get(
-      `${this.baseUrl}${movieID}/credits?api_key=${this.apiKey}&language=en-US`
+      `${this.baseUrl}/movie/${movieID}/credits${this.apiKey}&language=en-US`
     );
   }
 
   getTrailer(movieID: number) {
     return this.http.get(
-      `${this.baseUrl}${movieID}/videos?api_key=${this.apiKey}&language=en-US`
+      `${this.baseUrl}/movie/${movieID}/videos${this.apiKey}&language=en-US`
     );
+  }
+
+  getCastDetails(castID: number) {
+    return this.http.get( 
+      `${this.baseUrl}/person/${castID}${this.apiKey}&language=en-US`
+    )
+  }
+
+  getMoviesOfCast(castID: number) {
+    return this.http.get( 
+      `${this.baseUrl}/person/${castID}/combined_credits${this.apiKey}&language=en-US`
+    )
   }
 
   loginUrl: string = 'https://msi.htoowaiyan.com/api/v1/users/signin';

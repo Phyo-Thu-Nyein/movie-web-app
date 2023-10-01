@@ -117,7 +117,7 @@
     <div class="casts-wrapper flex">
       <div *ngFor="let cast of casts; let i = index">
         <ng-container *ngIf="i < 13">
-          <div class="one-cast">
+          <div class="one-cast" (click)="goToSoloDetails(cast['id']!)">
             <div *ngIf="cast['profile_path'] == null" class="no-pfp">
               <img
                 src="../../assets/img/null-profile.jpg"

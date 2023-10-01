@@ -185,6 +185,7 @@ span {
     background: linear-gradient(90deg, rgb(36, 48, 90) 0%, rgba(104, 44, 83, 0.493) 50%, rgb(100, 68, 29) 100%);
     height: 25rem;
     margin: .5rem;
+    cursor: pointer;
 }
 .one-cast h4, p {
     /* overflow: hidden;
@@ -193,6 +194,9 @@ span {
     -webkit-line-clamp: 3;
     -webkit-box-orient: vertical; */
     padding: 0 .4rem;
+}
+.one-cast:hover img {
+    transform: scale(1.03);
 }
 
 /* RECOMMENDATION SECTION  */

@@ -5,7 +5,7 @@ import { HttpErrorResponse } from '@angular/common/http';
 import { MovieDetails, Genre, ProductionCompany, ProductionCountry} from '../interface/movie-details';
 import { Cast, CastDetails } from '../interface/cast-details';
 import { TrailerDetails, trailerResult } from '../interface/trailer-details';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
 import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
 
@@ -20,7 +20,9 @@ export class DetailComponent implements OnInit {
     private apiService: ApiService,
     private activatedRoute: ActivatedRoute,
     private http: HttpClient,
-    private sanitizer: DomSanitizer) { 
+    private sanitizer: DomSanitizer,
+    private router: Router  
+  ) { 
 
     }
 
@@ -52,6 +54,7 @@ export class DetailComponent implements OnInit {
   trailerKey: string = '';
   // trailerSize!: number;
   // trailerIndex!: number;
+
 
   ngOnInit() {
     this.movieID = this.activatedRoute.snapshot.params['movieid'];
@@ -135,7 +138,7 @@ export class DetailComponent implements OnInit {
 
         // this.trailerKey = this.trailer[4].key!;
         // this.trailerSize = this.trailer[0].size!;
-        console.log(this.trailerKey);
+        // console.log(this.trailerKey);
         // console.log(this.trailerSize);
       },
       error: (err: HttpErrorResponse) => {
@@ -150,6 +153,9 @@ export class DetailComponent implements OnInit {
     
   }
   
+  goToSoloDetails(castID:number) {
+    this.router.navigateByUrl(`cast/${castID}`)
+  }
 
   ngOnDestroy() {
     if (this.movieSub) {
