@@ -130,7 +130,7 @@ export class DetailComponent implements OnInit {
          console.log("trailer key here")
          console.log(this.trailerKey);
  
-        this.safeSrc = this.sanitizer.bypassSecurityTrustResourceUrl(`https://www.youtube.com/embed/${this.trailerKey}?controls=0&autoplay=1&mute=1&playsinline=1&playlist=${this.trailerKey}&loop=1`);
+        this.safeSrc = this.sanitizer.bypassSecurityTrustResourceUrl(`https://www.youtube.com/embed/${this.trailerKey}?start=6&end=90&controls=0&autoplay=1&mute=1&playsinline=1&playlist=${this.trailerKey}&loop=1`);
 
 
         // this.trailerKey = this.trailer[4].key!;

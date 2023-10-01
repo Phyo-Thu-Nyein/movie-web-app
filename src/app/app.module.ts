@@ -21,6 +21,7 @@ import { CookieService } from 'ngx-cookie-service';
 import { NgxSkeletonLoaderModule } from 'ngx-skeleton-loader';
 import { CarouselComponent } from './carousel/carousel.component';
 import { SkeloaderComponent } from './skeloader/skeloader.component';
+import { MovieskeleComponent } from './movieskele/movieskele.component';
 import { PowerPipe } from './services/power.pipe';
 import { HighlightDirective } from './services/highlight.directive';
 import { SpinloaderComponent } from './spinloader/spinloader.component';
@@ -44,6 +45,7 @@ import { SpinloaderComponent } from './spinloader/spinloader.component';
     PowerPipe,
     HighlightDirective,
     SpinloaderComponent,
+    MovieskeleComponent,
   ],
   imports: [
     BrowserModule,

@@ -1,55 +1,63 @@
-<app-navbar></app-navbar>
+<!-- SKELETON LOADER -->
+<ng-container *ngIf="loading else content">
+  <app-movieskele></app-movieskele>
+</ng-container>
 
-<!-- <button>Get Movies</button> -->
-<div class="dummy-body">
+<ng-template #content>
+  <app-navbar></app-navbar>
 
-  <!-- CAROUSEL  -->
-  <app-carousel></app-carousel>
-
-  <!-- HEADING AND INTRODUCTION -->
-  <div class="intro">
-    <h1>Cinematic Wonders Await</h1>
-    <h3>
-      Be the first to witness movie magic with PMovie Premieres. Get exclusive
-      access to trailers, behind-the-scenes content, and sneak peeks. Stay ahead
-      of the curve and be part of the movie conversation.
-    </h3><br>
-    <i class='bx bxs-chevron-down bx-fade-up' style='color:#ffffff' ></i>
+  <!-- <button>Get Movies</button> -->
+  <div class="dummy-body">
+  
+    <!-- CAROUSEL  -->
+    <app-carousel></app-carousel>
+  
+    <!-- HEADING AND INTRODUCTION -->
+    <div class="intro">
+      <h1>Cinematic Wonders Await</h1>
+      <h3>
+        Be the first to witness movie magic with PMovie Premieres. Get exclusive
+        access to trailers, behind-the-scenes content, and sneak peeks. Stay ahead
+        of the curve and be part of the movie conversation.
+      </h3><br>
+      <i class='bx bxs-chevron-down bx-fade-up' style='color:#ffffff' ></i>
+    </div>
+  
+    <!-- MOVIE LISTS  -->
+    <div class="list-wrapper flex">
+      <span #popular></span>
+      <app-movielist
+        category="Popular Movies"
+        [movieList]="popularMovieList"
+      ></app-movielist>
+      <span id="toprated"></span>
+      <app-movielist
+        category="Top-Rated Movies"
+        [movieList]="topRatedList"
+      ></app-movielist>
+      <span id="nowplaying"></span>
+      <app-movielist
+        category="Now-Playing Movies"
+        [movieList]="nowPlayingList"
+      ></app-movielist>
+      <span id="upcoming"></span>
+      <app-movielist
+        category="Upcoming Movies"
+        [movieList]="upComingList"
+      ></app-movielist>
+    </div>
   </div>
-
-  <!-- MOVIE LISTS  -->
-  <div class="list-wrapper flex">
-    <span #popular></span>
-    <app-movielist
-      category="Popular Movies"
-      [movieList]="popularMovieList"
-    ></app-movielist>
-    <span id="toprated"></span>
-    <app-movielist
-      category="Top-Rated Movies"
-      [movieList]="topRatedList"
-    ></app-movielist>
-    <span id="nowplaying"></span>
-    <app-movielist
-      category="Now-Playing Movies"
-      [movieList]="nowPlayingList"
-    ></app-movielist>
-    <span id="upcoming"></span>
-    <app-movielist
-      category="Upcoming Movies"
-      [movieList]="upComingList"
-    ></app-movielist>
-  </div>
-</div>
-
-<!-- FOOTER SECTION  -->
-<app-footer></app-footer>
-<script>
-  $(window).load(function () {
-$('.main-gallery').flickity({
-    wrapAround: true,
-    freeScroll: true,
-    lazyLoad: 3
-});
-});
-</script>
+  
+  <!-- FOOTER SECTION  -->
+  <app-footer></app-footer>
+  <!-- <script>
+    $(window).load(function () {
+  $('.main-gallery').flickity({
+      wrapAround: true,
+      freeScroll: true,
+      lazyLoad: 3
+  });
+  });
+  </script> -->
+  
+</ng-template>

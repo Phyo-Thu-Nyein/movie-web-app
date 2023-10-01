@@ -19,8 +19,10 @@ export class SignupComponent {
   email: string = '';
   password: string = '';
   conpassword: string = '';
+  loading: boolean = false;
 
   register() {
+    this.loading = true;
     var result = this.apiService.register(
       {
         'name': this.username,

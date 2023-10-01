@@ -7,7 +7,6 @@
     <h1>Register</h1>
     <form (ngSubmit)="register()" #loginform="ngForm" class="form">
       <div class="text-inputs">
-        
         <!-- USERNAME FIELD  -->
         <div class="row username-box">
           <label for=""><i class="bx bxs-user"></i></label>
@@ -17,18 +16,15 @@
             id="username"
             placeholder="Username"
             [(ngModel)]="username"
-            required 
+            required
             minlength="4"
-            #name = "ngModel"
+            #name="ngModel"
           />
           <!-- NAME ERROR  -->
-          <span
-            *ngIf="!name.valid && name.touched"
-            class="error mail-error">
+          <span *ngIf="!name.valid && name.touched" class="error mail-error">
             Username must have at least 4 characters!
           </span>
         </div>
-
 
         <!-- EMAIL FIELD  -->
         <div class="row email-box">
@@ -39,14 +35,12 @@
             id="email"
             placeholder="Email"
             [(ngModel)]="email"
-            required 
+            required
             minlength="4"
-            #mail = "ngModel"
+            #mail="ngModel"
           />
           <!-- EMAIL ERROR  -->
-          <span
-            *ngIf="!mail.valid && mail.touched"
-            class="error mail-error">
+          <span *ngIf="!mail.valid && mail.touched" class="error mail-error">
             Email is left blank or wrong!
           </span>
         </div>
@@ -59,19 +53,17 @@
             name="password"
             id="password"
             placeholder="Password"
-            [(ngModel)] = "password"
+            [(ngModel)]="password"
             required
-            minlength="4"
-            #pass = "ngModel"
+            minlength="8"
+            #pass="ngModel"
           />
           <!-- PASSWORD ERROR -->
-          <span
-            *ngIf="!pass.valid && pass.touched"
-            class="error psw-error">
+          <span *ngIf="!pass.valid && pass.touched" class="error psw-error">
             Password must have at least 4 characters!
           </span>
         </div>
-        
+
         <!-- CONFIRM PASSWORD FIELD  -->
         <div class="row psw-box">
           <label for=""><i class="bx bxs-lock"></i> </label>
@@ -80,29 +72,36 @@
             name="password"
             id="conpassword"
             placeholder="Confirm Password"
-            [(ngModel)] = "conpassword"
+            [(ngModel)]="conpassword"
             required
-            minlength="4"
-            #conpass = "ngModel"
+            minlength="8"
+            #conpass="ngModel"
           />
           <!-- CONFIRM PASSWORD ERROR -->
           <span
             *ngIf="!conpass.valid && conpass.touched"
-            class="error psw-error">
+            class="error psw-error"
+          >
             Passwords do not match!
           </span>
         </div>
-        
       </div>
-      
+
       <!-- REGISTER BUTTON  -->
       <div class="row button-box">
         <button
           type="submit"
           id="register"
-          [disabled]="!name.valid || !mail.valid || !pass.valid || !conpass.valid"
+          [disabled]="
+            !name.valid || !mail.valid || !pass.valid || !conpass.valid
+          "
         >
-          Register
+          <ng-container *ngIf="loading else btn">
+            <app-spinloader></app-spinloader>
+          </ng-container>
+          <ng-template #btn> 
+            Register 
+          </ng-template>
         </button>
       </div>
       <div class="row link-box">

@@ -13,6 +13,8 @@ import { Movie, Result } from '../interface/movie-result';
 export class MoviesComponent implements OnInit {
   constructor(private apiService: ApiService, private router: Router, private activatedRoute:ActivatedRoute) {  }
 
+  //loading
+  loading: boolean = true;
   // mySubscription: Subscription = new Subscription();
   movieSub: Subscription = new Subscription();
 
@@ -27,11 +29,6 @@ export class MoviesComponent implements OnInit {
   poster_path: string = '';
 
   ngOnInit() {
-    
-    // this.reloadPage();
-    // console.log('-------BEFORE------');
-    // this.getMovie();
-    // console.log('-------AFTER--------');
 
     var result = this.apiService.getMovies('popular');
     this.movieSub = result.subscribe({
@@ -80,19 +77,14 @@ export class MoviesComponent implements OnInit {
         this.backdrop_path = response['results'][1]['backdrop_path'];
 
         this.poster_path = response['results'][1]['poster_path'];
+        //loading
+        this.loading = false;
       },
       error: (err: HttpErrorResponse) => {
         console.log(err);
       },
     });
   }
-
-  
-  
-  // reloadPage() {
-  //   window.location.reload();
-  //   console.log("it works, the reloading");
-  // }
 
   goToDetail(movieID: number) {
     var id = movieID;
@@ -105,9 +97,6 @@ export class MoviesComponent implements OnInit {
     if (this.movieSub) {
       this.movieSub.unsubscribe();
     }
-    // if (this.mySubscription) {
-    //   this.mySubscription.unsubscribe();
-    // }
   }
 
   // getMovie() {
