@@ -18,6 +18,9 @@ export class CastDetailsComponent implements OnInit {
   castMovieSub: Subscription = new Subscription();
   castSub: Subscription = new Subscription();
 
+  //loading
+  loading: boolean = true;
+
   //Single Cast Details
   castID!: number;
   profile: string = '';
@@ -58,6 +61,8 @@ export class CastDetailsComponent implements OnInit {
       this.castMovieSub = result.subscribe({
         next: (response: MoviesOfCast) => {
           this.castMovieList = response['cast']!;
+          //loading
+          this.loading = false;
         }, 
         error: (error: HttpErrorResponse) => {
           alert(error);

@@ -1,53 +1,60 @@
 <app-navbar></app-navbar>
 
-<div class="cast-container flex">
-  <div class="profile flex">
-    <div class="pic flex">
+<!-- CAST DETAILS SKELETON LOADER -->
+<ng-container *ngIf="loading else content">
+  <app-castdetailskele></app-castdetailskele>
+</ng-container>
+
+<ng-template #content>
+  <div class="cast-container flex">
+    <div class="profile flex">
+      <div class="pic flex">
         <img
-      src="https://image.tmdb.org/t/p/w300_and_h450_bestv2/{{ profile }}"
-      alt="profile"
-    />
-    </div>
-    <div class="info flex">
-        <span><strong>Known for</strong><br> {{ knownfor }}</span>
-        <span><strong>Date of birth </strong><br>{{ birthday }}</span>
-      <span><strong>Place of birth </strong><br>{{ birthplace }}</span>
+          src="https://image.tmdb.org/t/p/w300_and_h450_bestv2/{{ profile }}"
+          alt="profile"
+        />
+      </div>
+      <div class="info flex">
+        <span
+          ><strong>Known for</strong><br />
+          {{ knownfor }}</span
+        >
+        <span><strong>Date of birth </strong><br />{{ birthday }}</span>
+        <span><strong>Place of birth </strong><br />{{ birthplace }}</span>
+      </div>
     </div>
 
-  </div>
+    <div class="about flex">
+      <div class="name">
+        <h1>{{ name }}</h1>
+      </div>
+      <div class="bd-bp flex"></div>
+      <div class="bio">
+        <h3>Biography</h3>
+        <p>{{ bio }}</p>
+      </div>
+      <div class="related-movies">
+        <h2>Known for</h2>
 
-  <div class="about flex">
-    <div class="name">
-      <h1>{{ name }}</h1>
-    </div>
-    <div class="bd-bp flex">
-      
-    </div>
-    <div class="bio">
-      <h3>Biography</h3>
-      <p>{{ bio }}</p>
-    </div>
-    <div class="related-movies">
-      <h2>Known for</h2>
-
-      <div class="movie-list flex">
-        <div *ngFor="let movie of castMovieList">
-          <div class="posters">
-            <span>
-              <img
-                (click)="goToDetail(movie['id']!)"
-                [src]="
-                  'https://image.tmdb.org/t/p/w220_and_h330_face/' +
-                  movie['poster_path']
-                "
-              />
-            </span>
+        <div class="movie-list flex">
+          <div *ngFor="let movie of castMovieList">
+            <div class="posters">
+              <span>
+                <img
+                  (click)="goToDetail(movie['id']!)"
+                  [src]="
+                    'https://image.tmdb.org/t/p/w220_and_h330_face/' +
+                    movie['poster_path']
+                  "
+                />
+              </span>
+            </div>
           </div>
         </div>
       </div>
     </div>
   </div>
-</div>
+</ng-template>
 
 <!-- FOOTER -->
 <app-footer></app-footer>

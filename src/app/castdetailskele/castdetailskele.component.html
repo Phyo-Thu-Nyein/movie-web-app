@@ -1,0 +1,64 @@
+<div class="wrapper flex">
+    <div class="container flex">
+        <div class="profile">
+            <div class="pfp">
+                <ngx-skeleton-loader
+                    count="1"
+                    [theme]="{
+                        width: '300px',
+                        height: '450px',
+                        'background-color': 'gray'
+                    }"
+                ></ngx-skeleton-loader>
+            </div>
+            <div class="info">
+                <ngx-skeleton-loader 
+                    class="infos flex"
+                    count="3" 
+                    [theme]="{
+                        width: '10rem',
+                        height: '2rem',
+                        'background-color': 'gray'
+                    }"
+                ></ngx-skeleton-loader>
+            </div>
+        </div>
+        <div class="about flex">
+            <ngx-skeleton-loader
+                [theme]="{
+                    width: '12rem',
+                    height: '3rem',
+                    'background-color': 'gray'
+                }"
+            ></ngx-skeleton-loader>
+            <ngx-skeleton-loader
+                [theme]="{
+                    width: '10rem',
+                    height: '2.2rem',
+                    'background-color': 'gray'
+                }"
+            ></ngx-skeleton-loader>
+            <ngx-skeleton-loader 
+                class="bio-lines flex"
+                count="4"
+                [theme]="{
+                    width: '67.8vw',
+                    height: '1.6rem',
+                    'background-color': 'gray'
+                }"
+            ></ngx-skeleton-loader>
+            <br>
+            <div class="related-movies">
+                <ngx-skeleton-loader 
+                class="movies flex"
+                count="6"
+                [theme]="{
+                    width: '130px',
+                    height: '200px',
+                    'background-color': 'gray'
+                }"
+                ></ngx-skeleton-loader>
+            </div>
+        </div>
+    </div>
+</div>
