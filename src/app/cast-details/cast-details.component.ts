@@ -75,4 +75,13 @@ export class CastDetailsComponent implements OnInit {
     this.router.navigateByUrl(`detail/${id}`);
   }
 
+  ngOnDestroy() {
+    if (this.castSub) {
+      this.castSub.unsubscribe();
+    }
+    if (this.castMovieSub) {
+      this.castMovieSub.unsubscribe();
+    }
+  }
+
 }
