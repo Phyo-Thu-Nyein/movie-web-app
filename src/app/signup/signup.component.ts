@@ -44,6 +44,7 @@ export class SignupComponent {
         console.log(err);
         const { message } = err['error'];
         alert(message);
+        this.loading = false;
       },
     });
   }
