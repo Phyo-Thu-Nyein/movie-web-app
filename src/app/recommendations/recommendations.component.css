@@ -76,3 +76,25 @@
     -webkit-box-orient: vertical;
 
 } 
+
+/* MAKING RESPONSIVE FOR PHONES */
+@media (max-width: 420px) {
+    .heading h1 {
+        font-size: 1.4rem;
+    }
+    .movie-list {
+        width: 98%;
+        gap: 1rem;
+    }
+
+    .posters {
+        width: 6rem;
+    }
+    .posters img {
+        height: 8rem;
+    }
+
+    .overview p {
+        font-size: .7rem;
+    }
+}
