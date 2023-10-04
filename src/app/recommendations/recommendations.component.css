@@ -97,4 +97,11 @@
     .overview p {
         font-size: .7rem;
     }
+
+    .list-wrapper h2 {
+        border-radius: 0 0 .4rem .4rem;
+        width: 7rem;
+        font-size: .8rem;
+        padding: .5rem .3rem ;
+    }
 }

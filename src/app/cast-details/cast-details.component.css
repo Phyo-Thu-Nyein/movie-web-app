@@ -21,6 +21,7 @@
     flex-direction: column;
 }
 .cast-container .profile .pic {
+    /* background-color: pink; */
     width: 100%;
     justify-content: start;
 }
@@ -94,3 +95,36 @@
     -webkit-box-orient: vertical;
 
 } 
+
+/* MAKING RESPONSIVE FOR PHONES */
+@media (max-width: 420px) {
+    .cast-container {
+        flex-direction: column;
+        padding-top: 5rem;
+        gap: .5rem;
+    }
+    .cast-container .profile {
+        width: 100%;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+    .cast-container .profile .pic {
+        justify-content: center;
+    }
+    .cast-container .profile .pic img{
+        width: 70%;
+    }
+    .cast-container .profile .info {
+        padding-top: 0;
+    }
+
+    .cast-container .about {
+        width: 96%;
+        gap: .2rem;
+    }
+
+    h1 {
+        font-size: 1.6rem;
+    }
+
+}
