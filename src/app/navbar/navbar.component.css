@@ -17,6 +17,14 @@
     
     z-index: 300;
 }
+.mynavbar .menu-icon {
+    display: none;
+    position: absolute;
+    left: .2rem;
+    top: .2rem;
+    font-size: 2rem;
+
+}
 .mynavbar .brand {
     /* outline: 2px solid red; */
     cursor: pointer;
@@ -58,6 +66,21 @@
     opacity: 1;
 }
 
+.mynavbar .links-pop {
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+    display: none;
+    background-color: rgba(31, 31, 31, 0.527);
+    border: 1px solid rgba(255, 255, 255, 0.329);
+    position: absolute;
+    top: 3.1rem;
+    left: .1rem;
+    flex-direction: column;
+    padding: .5rem;
+    border-radius: .5rem;
+    transform: translateX(-9rem);
+
+}
 .mynavbar .links {
     /* outline: 2px solid red; */
     justify-content: center;
@@ -102,4 +125,28 @@
     border-color : rgba(255, 191, 161, 0.719);
     color: rgb(255, 163, 151);
     opacity: 1;
+}
+
+/* MAKING IT RESPONSIVE FOR PHONES */
+@media (max-width:420px) {
+    .mynavbar .menu-icon {
+        display: block;
+    }
+    .mynavbar .menu-icon:hover ~ .links-pop{
+        /* background-color: brown; */
+        transform: translateX(0);
+    }
+    .mynavbar .brand {
+        margin-left: 1rem;
+    }
+    .mynavbar .links {
+        display: none;
+    }
+    .mynavbar .links-pop {
+        display: block;
+    }
+    .mynavbar .links-pop hr {
+        width: 100%;
+        /* border: 1px solid white; */
+    }
 }

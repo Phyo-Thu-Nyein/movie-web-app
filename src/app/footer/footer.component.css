@@ -95,3 +95,46 @@ hr {
 }
 
 /* -------------------- FOOTER ENDS HERE -------------------- */
+
+/* MAKING RESPONSIVE FOR PHONES */
+@media (max-width: 420px) {
+    .footer-section {
+        height: auto;
+        padding-top: 1rem;
+    }
+    .footer-section .footer-top {
+        /* align-items: start; */
+        /* justify-content: space-between; */
+        gap: 1rem;
+        flex-wrap: wrap;
+        margin-bottom: 1rem;
+    }
+    .footer-section .footer-top .site-brand .logo-title h1 {
+        font-size: 1.5rem;
+    }
+    .footer-section .footer-top .site-brand .logo-title i {
+        font-size: 2rem;
+    }
+    .footer-section .footer-top .site-brand h3 {
+        font-size: 1.2rem;
+    }
+    .footer-section .footer-top ul {
+        font-size: 1rem;
+    }
+
+    .footer-section .footer-bot {
+        margin-top: 1rem;
+        gap: 1rem;
+    }
+    .footer-section .footer-bot .header h3 {
+        font-size: 1.2rem;
+     }
+    .footer-section .footer-bot .links {
+        gap: .5rem;
+    }
+    
+    .footer-section .footer-bot .copyright p {
+        font-size: .8rem;
+    }
+    
+}

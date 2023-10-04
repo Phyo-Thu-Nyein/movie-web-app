@@ -42,7 +42,7 @@
     /* background-color: rgba(240, 248, 255, 0.425); */
     -webkit-backdrop-filter: blur(3px);
     backdrop-filter: blur(3px);
-    width: 35vw;
+    width: 35%;
     height: 25vh;
 
     position: absolute;
@@ -143,4 +143,24 @@ p {
     -webkit-text-fill-color: transparent;
     -moz-text-fill-color: transparent;
     margin-right: 8px;
+}
+
+/* MAKING IT RESPONSIVE FOR PHONES*/
+@media (max-width:420px) { 
+    .btn-gp-wrapper {
+        width: 75%;
+    }
+    .btn-gp-wrapper .mybtn p {
+        font-size: 1.2rem;
+    }
+
+    .desc {
+        height: 90%;
+    }
+    .desc h1 {
+        font-size: 4rem;
+    }
+    .desc p {
+        font-size: 1.6rem;
+    }
 }
