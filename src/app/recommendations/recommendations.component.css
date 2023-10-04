@@ -83,12 +83,12 @@
         font-size: 1.4rem;
     }
     .movie-list {
-        width: 98%;
+        width: 100%;
         gap: 1rem;
     }
 
     .posters {
-        width: 6rem;
+        width: 5rem;
     }
     .posters img {
         height: 8rem;
