@@ -8,16 +8,17 @@
     justify-content: center;
     gap: 2rem;
     width: 100vw;
-    height: 110vh;
+    height: 100vh;
     max-width: 100%;
     /* border-bottom: 1px solid rgba(255, 255, 255, 0.205); */
-    margin-bottom: 18rem;
+    margin-bottom: 10rem;
 }
 
 .cast-container .profile {
     /* background-color: rgba(255, 192, 203, 0.514); */
     margin-top: 9rem;
     width: 20%;
+    height: 92%;
     flex-direction: column;
 }
 
@@ -34,8 +35,8 @@
 .cast-container .profile .info {
     flex-direction: column;
     align-items: start;
-    gap: 2rem;
-    padding-top: 2rem;
+    gap: 1.3rem;
+    padding-top: 1rem;
     width: 100%;
 }
 
@@ -44,13 +45,27 @@
     flex-direction: column;
     align-items: normal;
     width: 68%;
-    height: 31rem;
+    height: 34.5rem;
     gap: .8rem;
 }
 
 .cast-container .about .bd-bp {
     gap: 1.5rem;
 }
+
+.cast-container .about .bio p {
+    background-color: rgba(0, 0, 0, 0.219);
+    padding: .4rem;
+    overflow: auto;
+    text-overflow:ellipsis;
+    display: -webkit-box;
+    line-height: 20px;
+    max-height: 16.4rem;
+    max-width: 100%;
+    -webkit-line-clamp: 15;
+    -webkit-box-orient: vertical;
+}
+
 
 .related-movies {
     width: 100%;
@@ -135,11 +150,13 @@
     }
 
     .cast-container .about .bio p {
+        background-color: rgba(0, 0, 0, 0.219);
+        padding: .4rem;    
         overflow: auto;
         text-overflow: ellipsis;
         display: -webkit-box;
         line-height: 20px;
-        max-height: 20rem;
+        max-height: 12.4rem;
         max-width: 100%;
         -webkit-line-clamp: 15;
         -webkit-box-orient: vertical;
