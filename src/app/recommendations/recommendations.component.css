@@ -79,7 +79,7 @@
 } 
 
 /* MAKING RESPONSIVE FOR PHONES */
-@media (max-width: 420px) {
+@media (max-width: 860px) {
     .heading h1 {
         font-size: 1.4rem;
     }

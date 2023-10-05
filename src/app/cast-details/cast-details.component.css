@@ -118,7 +118,7 @@
 }
 
 /* MAKING RESPONSIVE FOR PHONES */
-@media (max-width: 420px) {
+@media (max-width: 860px) {
     .cast-container {
         flex-direction: column;
         /* padding-top: 2rem; */

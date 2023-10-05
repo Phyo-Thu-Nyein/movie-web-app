@@ -47,12 +47,12 @@
 
 } 
 
-@media (max-width: 420px) {
+@media (max-width: 860px) {
     .movie-list {
         background-color: rgba(0, 0, 0, 0);
         flex-wrap: wrap;
         justify-content: center;
-        gap: .6rem;
+        gap: 1rem;
     }
 
     .category {

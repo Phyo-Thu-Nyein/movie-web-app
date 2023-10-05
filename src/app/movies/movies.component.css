@@ -37,3 +37,13 @@
   width: 90%;
   flex-direction: column;
 }
+
+/* MAKING RESPONSIVE FOR PHONES */
+@media (max-width: 860px) {
+  .intro h1 {
+    font-size: 1.6rem;
+  }
+  .intro h3 {
+    font-size: .9rem;
+  }
+}

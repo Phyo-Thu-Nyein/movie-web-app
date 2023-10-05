@@ -128,7 +128,7 @@
 }
 
 /* MAKING IT RESPONSIVE FOR PHONES */
-@media (max-width:420px) {
+@media (max-width:860px) {
     .mynavbar .menu-icon {
         display: block;
     }
