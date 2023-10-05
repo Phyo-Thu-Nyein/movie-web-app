@@ -238,7 +238,7 @@ span {
         width: 10rem;
         height: 15rem;
     }
-    .detail-wrapper h3, h1 {
+    .scroll-arrow h3, .scroll-arrow h1 {
         text-align: center;
         font-size: 1.2rem;
         font-weight: lighter;
