@@ -36,7 +36,7 @@
     /* background-color: rgba(0, 0, 0, 0.822); */
     color: #fff;
     font-size: 16px;
-    max-width: 100%;
+    max-width: 150px;
 
     overflow: hidden;
     text-overflow: ellipsis;
@@ -46,3 +46,15 @@
     -webkit-box-orient: vertical;
 
 } 
+
+@media (max-width: 420px) {
+    .movie-list {
+        background-color: rgba(0, 0, 0, 0);
+        flex-wrap: wrap;
+        gap: .6rem;
+    }
+
+    .category {
+        justify-content: center;
+    }
+}

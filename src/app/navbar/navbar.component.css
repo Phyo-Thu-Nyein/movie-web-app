@@ -149,4 +149,11 @@
         width: 100%;
         /* border: 1px solid white; */
     }
+
+    .mynavbar .logout i {
+        font-size: 1.6rem;
+    }
+    .mynavbar .logout a {
+        display: none;
+    }
 }
