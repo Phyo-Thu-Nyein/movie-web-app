@@ -117,15 +117,16 @@
       <div *ngFor="let cast of casts; let i = index">
         <ng-container *ngIf="i < 13">
           <div class="one-cast" (click)="goToSoloDetails(cast['id']!)">
-            <div *ngIf="cast['profile_path'] == null" class="no-pfp">
+            <ng-container *ngIf="cast['profile_path'] == null else img" class="no-pfp">
               <img
                 src="../../assets/img/null-profile.jpg"
                 alt=""
                 width="200px"
                 height="300px"
               />
-            </div>
-            <img
+            </ng-container>
+            <ng-template #img>
+              <img
               [src]="
                 'http://image.tmdb.org/t/p/w300_and_h450_bestv2/' +
                 cast['profile_path']
@@ -133,6 +134,8 @@
               alt=""
               width="200px"
             />
+            </ng-template>
+            
             <h4>{{ cast["name"] }}</h4>
             <p>{{ cast["character"] }}</p>
           </div>

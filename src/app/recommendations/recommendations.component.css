@@ -20,8 +20,9 @@
     background-color: #082d3346;
     width: 14rem;
     text-align: center;
+    font-weight: lighter;
     padding: 0 1rem .5rem;
-    border-radius: 0 0 .4rem .4rem;
+    border-radius: .4rem;
 }
 
 .heading h1 {
@@ -33,7 +34,7 @@
     flex-wrap: wrap;
     justify-content: center;
     border-radius: .6rem;
-    padding: 2%;
+    padding: 2% .5%;
     margin: 0 5.5rem;
     width: auto;
     height: auto;
@@ -83,23 +84,30 @@
         font-size: 1.4rem;
     }
     .movie-list {
+        background-color: #082d3300;
+        justify-content: center;
         width: 100%;
         gap: 1rem;
     }
+    .movie-list h3 {
+        margin-right: 0;
+        text-align: center;
+        font-size: .8rem;
+    }
 
     .posters {
-        width: 5rem;
+        width: 150px;
     }
     .posters img {
-        height: 8rem;
+        height: 220px;
     }
 
     .overview p {
-        font-size: .7rem;
+        font-size: .9rem;
     }
 
     .list-wrapper h2 {
-        border-radius: 0 0 .4rem .4rem;
+        border-radius: .4rem;
         width: 7rem;
         font-size: .8rem;
         padding: .5rem .3rem ;
