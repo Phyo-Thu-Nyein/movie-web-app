@@ -1,6 +1,6 @@
 <section class="mynavbar flex">
   <div class="menu-icon">
-    <i class='bx bx-menu'></i>
+    <i class="bx bx-menu"></i>
   </div>
   <div class="brand">
     <a routerLink="/movies" class="flex">
@@ -11,11 +11,11 @@
   </div>
   <ul class="links-pop flex">
     <li><a routerLink="/movies">Popular</a></li>
-    <hr>
+    <hr />
     <li><a routerLink="/movies">Now-Playing</a></li>
-    <hr>
+    <hr />
     <li><a routerLink="/movies">Top-Rated</a></li>
-    <hr>
+    <hr />
     <li><a routerLink="/movies">Upcoming</a></li>
   </ul>
 
@@ -28,8 +28,16 @@
     <li><span>|</span></li>
     <li><a routerLink="/movies">Upcoming</a></li>
   </ul>
+
+  <form (ngSubmit)="handleSearch()" class="search-bar flex">
+    <input type="text" id="searchBox" placeholder="Search" />
+    <button class="flex">
+      <i class="bx bx-search-alt"></i>
+    </button>
+  </form>
+
   <div (click)="logout()" class="logout flex">
-    <i class='bx bx-log-out'></i>
+    <i class="bx bx-log-out"></i>
     <a>Logout</a>
   </div>
 </section>

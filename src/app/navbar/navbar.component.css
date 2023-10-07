@@ -14,9 +14,10 @@
     justify-content: space-between;
     gap: 5em;
     position: fixed;
-    
+
     z-index: 300;
 }
+
 .mynavbar .menu-icon {
     display: none;
     position: absolute;
@@ -25,35 +26,43 @@
     font-size: 2rem;
 
 }
+
 .mynavbar .brand {
     /* outline: 2px solid red; */
     cursor: pointer;
 }
+
 .mynavbar .brand a {
     font-weight: 600;
     font-size: 1.8rem;
 }
+
 .mynavbar .brand a .txt-fade-in {
     transform: translateX(-3rem);
     opacity: 0;
     z-index: -1;
     transition: .2s;
 }
+
 .mynavbar .brand a i {
     font-size: 2rem;
     transform: translateX(-3.5rem);
 }
-.mynavbar .brand a:hover > .txt-fade-in {
+
+.mynavbar .brand a:hover>.txt-fade-in {
     transform: translateX(0);
     opacity: 1;
     z-index: 1;
 }
-.mynavbar .brand a:hover > i {
+
+.mynavbar .brand a:hover>i {
     transform: translateX(0);
 }
-.mynavbar .brand a:hover > span {
+
+.mynavbar .brand a:hover>span {
     color: var(--clr-cyan300);
 }
+
 /* .mynavbar .brand a, i {
     font-size: 1.8rem;
     opacity: 0.6;
@@ -61,7 +70,8 @@
 /* .mynavbar .brand {
     background-color: rgb(145, 163, 179);
 } */
-.mynavbar .brand:hover > a, .brand:hover > i {
+.mynavbar .brand:hover>a,
+.brand:hover>i {
     color: var(--clr-cyan300);
     opacity: 1;
 }
@@ -81,6 +91,7 @@
     transform: translateX(-9rem);
 
 }
+
 .mynavbar .links {
     /* outline: 2px solid red; */
     justify-content: center;
@@ -88,13 +99,17 @@
     cursor: pointer;
     transform: translateX(-2rem);
 }
+
 .mynavbar .links li {
     font-weight: 400;
     position: relative;
 }
+
 .mynavbar .links a {
     color: #fff;
+    font-size: 1rem;
 }
+
 .mynavbar .links a::before {
     content: '';
     display: block;
@@ -105,10 +120,12 @@
     width: 0%;
     transition: all .4s;
 }
+
 .mynavbar .links a:hover::before {
     width: 100%;
     background-color: var(--clr-cyan400);
 }
+
 .mynavbar .links a:hover {
     color: var(--clr-cyan300);
 }
@@ -121,10 +138,59 @@
     opacity: .7;
     cursor: pointer;
 }
-.mynavbar .logout:hover, .logout:hover i, .logout:hover a {
-    border-color : rgba(255, 191, 161, 0.719);
+
+.mynavbar .logout:hover,
+.logout:hover i,
+.logout:hover a {
+    border-color: rgba(255, 191, 161, 0.719);
     color: rgb(255, 163, 151);
     opacity: 1;
+}
+
+/* Search Bar */
+.search-bar {
+    /* background-color: #d36d3e; */
+    justify-content: center;
+    width: 305px;
+    height: 45px;
+    gap: 5px;
+}
+
+.search-bar input {
+    background-color: rgba(0, 0, 0, 0);
+    border: 1px solid rgba(255, 255, 255, 0.226);
+    border-radius: .5rem;
+    outline: none;
+    color: white;
+    font-size: 1.2rem;
+    padding: 0 .6rem;
+    width: 260px;
+    height: 86%;
+}
+
+.search-bar input:focus {
+    background-color: rgba(0, 0, 0, 0.24);
+}
+
+.search-bar input::placeholder {
+    color: rgba(255, 255, 255, 0.555);
+}
+
+.search-bar button {
+    background-color: rgba(0, 0, 0, 0);
+    border: 1px solid rgba(255, 255, 255, 0.226);
+    border-radius: .8rem;
+    justify-content: center;
+    width: 40px;
+    height: 86%;
+}
+
+.search-bar button:hover i {
+    color: var(--clr-cyan300);
+}
+
+.search-bar button i {
+    font-size: 1.7rem;
 }
 
 /* MAKING IT RESPONSIVE FOR PHONES */
@@ -132,19 +198,24 @@
     .mynavbar .menu-icon {
         display: block;
     }
-    .mynavbar .menu-icon:hover ~ .links-pop{
+
+    .mynavbar .menu-icon:hover~.links-pop {
         /* background-color: brown; */
         transform: translateX(0);
     }
+
     .mynavbar .brand {
         margin-left: 1rem;
     }
+
     .mynavbar .links {
         display: none;
     }
+
     .mynavbar .links-pop {
         display: block;
     }
+
     .mynavbar .links-pop hr {
         width: 100%;
         /* border: 1px solid white; */
@@ -153,7 +224,31 @@
     .mynavbar .logout i {
         font-size: 1.6rem;
     }
+
     .mynavbar .logout a {
         display: none;
+    }
+}
+
+@media (max-width: 744px) {
+
+    .mynavbar {
+        gap: .6rem;
+    }
+    .search-bar {
+        width: 200px;
+    }
+    .search-bar input {
+        width: 140px;
+    }
+
+
+}
+@media (max-width: 420px) {
+    .search-bar {
+        width: 150px;
+    }
+    .search-bar input {
+        width: 90px;
     }
 }

@@ -9,6 +9,7 @@ import { MoviesComponent } from './movies/movies.component';
 import { DetailComponent } from './detail/detail.component';
 import { AuthGuard } from './services/auth.guard';
 import { CastDetailsComponent } from './cast-details/cast-details.component';
+import { SearchresultsComponent } from './searchresults/searchresults.component';
 
 const routes: Routes = [
   {
@@ -41,6 +42,11 @@ const routes: Routes = [
   {
     path: 'cast/:castid',
     component: CastDetailsComponent,
+    canActivate: [AuthGuard]
+  },
+  {
+    path: 'search/:moviename', 
+    component: SearchresultsComponent,
     canActivate: [AuthGuard]
   }, 
   {

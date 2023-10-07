@@ -27,6 +27,7 @@ import { HighlightDirective } from './services/highlight.directive';
 import { SpinloaderComponent } from './spinloader/spinloader.component';
 import { CastDetailsComponent } from './cast-details/cast-details.component';
 import { CastdetailskeleComponent } from './castdetailskele/castdetailskele.component';
+import { SearchresultsComponent } from './searchresults/searchresults.component';
 
 @NgModule({
   declarations: [
@@ -49,7 +50,8 @@ import { CastdetailskeleComponent } from './castdetailskele/castdetailskele.comp
     SpinloaderComponent,
     MovieskeleComponent,
     CastDetailsComponent,
-    CastdetailskeleComponent
+    CastdetailskeleComponent,
+    SearchresultsComponent
   ],
   imports: [
     BrowserModule,

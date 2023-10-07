@@ -1,0 +1,47 @@
+<app-navbar></app-navbar>
+
+<ng-container *ngIf="loading else content">
+  <div class="loading-container flex">
+    <div class="spinner">
+      <div class="bounce1"></div>
+      <div class="bounce2"></div>
+      <div class="bounce3"></div>
+    </div>
+  </div>
+</ng-container>
+
+<ng-template #content>
+  <div class="list-wrapper">
+    <div class="heading flex">
+      <h1>Results for "{{ movieName }}"...</h1>
+    </div>
+
+    <div class="movie-list flex">
+      <div *ngFor="let movie of searchResults">
+        <div class="posters" (click)="goToDetail(movie['id']!)">
+          <span>
+            <img
+              [src]="
+                'https://image.tmdb.org/t/p/w600_and_h900_bestv2/' +
+                movie['poster_path']
+              "
+            />
+          </span>
+          <div class="overview">
+            <p>{{ movie["title"] }}</p>
+          </div>
+        </div>
+      </div>
+      <h3
+        *ngIf="foundMovies == 0"
+        style="margin: 0 1rem; color: rgb(255, 129, 150)"
+      >
+        We don't have enough data to suggest any movies based on this movie. You
+        can help by rating movies you've seen.
+      </h3>
+    </div>
+    <h2>End of Results...</h2>
+  </div>
+</ng-template>
+
+<app-footer></app-footer>
