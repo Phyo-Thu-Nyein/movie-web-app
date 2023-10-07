@@ -1,23 +1,32 @@
 # MovieWebApp with Angular
-## Features
+## Pages & Functions 
+- Mobile Responsiveness (90% guaranteed)
+- Navbar & Footer
 - Login
+  - Spin Loader
 - Register
+  - Spin Loader
 - Home page 
-  - Carousel
+  - Skeleton Loader
+  - Carousel (with flickity)
   - Four Categories of movies
-- Search
-  - Search Results
-  - Error msg for no results
-- Movie Detail Page
-  - bg img
-  - trailer
-  - poster
-  - title, overview, runtime, imbd, genre, casts, production, etc.
-  - clickable cast section
-    - if no profile pic, use a null-profile pic
-  - recommended movies section
-    - if no rcmd movies, display a msg
-- Cast Detail page
-  - profile pic
-  - name, age, bd, bio, etc.
-- NOT FOUND PAGE
+- Search 
+  - Spin Loader 
+  - Search Results 
+  - Error msg for no results 
+- Movie Detail Page 
+  - Skeleton Loader 
+  - bg img 
+  - trailer 
+  - poster 
+  - title, overview, runtime, imbd, genre, casts, production, etc. 
+  - clickable cast section 
+    - if no profile pic, use a null-profile pic 
+  - recommended movies section 
+    - if no rcmd movies, display a msg 
+- Cast Detail page 
+  - Skeleton Loader 
+  - profile pic 
+  - name, age, bd, bio, etc. 
+- Skeleton loader while the api is called 
+- NOT FOUND PAGE 
