@@ -1,0 +1,28 @@
+.center {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+}
+.bg-img {
+    background-color: rgba(0, 0, 0, 0.24);
+    background-image: url('../../assets/img/signin-bg.png');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    cursor: default;
+}
+.bg-img h1 {
+    font-size: 15vw;
+    font-weight: 1000;
+    color: rgb(255, 114, 137);
+}
+
+.bg-img img {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+}
