@@ -14,7 +14,9 @@
   - poster
   - title, overview, runtime, imbd, genre, casts, production, etc.
   - clickable cast section
+    - if no profile pic, use a null-profile pic
   - recommended movies section
+    - if no rcmd movies, display a msg
 - Cast Detail page
   - profile pic
   - name, age, bd, bio, etc.
