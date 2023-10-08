@@ -31,7 +31,8 @@ export class DetailComponent implements OnInit {
   trailerSub: Subscription = new Subscription();
 
   safeSrc?: SafeResourceUrl;
-  ytUrl: string = '';
+  popVidSrc?: SafeResourceUrl;
+  // ytUrl: string = '';
 
   //SKELETON LOADER 
   loading: boolean = true;
@@ -134,7 +135,7 @@ export class DetailComponent implements OnInit {
          console.log(this.trailerKey);
  
         this.safeSrc = this.sanitizer.bypassSecurityTrustResourceUrl(`https://www.youtube.com/embed/${this.trailerKey}?start=6&end=90&controls=0&autoplay=1&mute=1&playsinline=1&playlist=${this.trailerKey}&loop=1`);
-
+        this.popVidSrc = this.sanitizer.bypassSecurityTrustResourceUrl(`https://www.youtube.com/embed/${this.trailerKey}`);
 
         // this.trailerKey = this.trailer[4].key!;
         // this.trailerSize = this.trailer[0].size!;

@@ -6,6 +6,24 @@
 </ng-container>
 
 <ng-template #detailcontent>
+
+  <!-- Youtube Trailer Popup -->
+  <dialog class="popup-container flex" id="popvid">
+    <iframe
+      class="yt-popup"
+      [src]="popVidSrc"
+      title="YouTube video player"
+      frameborder="0"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+      allowfullscreen
+    ></iframe>
+
+    <button class="close-btn" onclick="popvid.close()">
+      <i class="bx bx-x-circle"></i>
+    </button>
+  </dialog>
+
+  <!-- Youtube vid in the background -->
   <div class="video-container">
     <iframe [src]="safeSrc"></iframe>
   </div>
@@ -15,7 +33,6 @@
   <div class="bk-img">
     <img src="https://image.tmdb.org/t/p/original/{{ bg_path }}" alt="" />
   </div>
-
   <!-- DETAIL CONTENT  -->
   <div class="detail-wrapper flex">
     <div class="poster">
@@ -37,14 +54,13 @@
         </div>
       </div>
       <div class="trailers flex">
-        <a
+        <button
           class="mybtn flex"
-          href="https://www.youtube.com/watch?v={{ trailerKey }}"
-          target="_blank"
+          onclick="popvid.showModal()"
         >
           <i class="bx bxl-youtube"></i>
           <span>Trailer</span>
-        </a>
+      </button>
         <!-- <button routerLink="" (click)="trailerYT()" class="flex">
         <span>Trailer</span>
       </button> -->
@@ -117,7 +133,10 @@
       <div *ngFor="let cast of casts; let i = index">
         <ng-container *ngIf="i < 13">
           <div class="one-cast" (click)="goToSoloDetails(cast['id']!)">
-            <ng-container *ngIf="cast['profile_path'] == null else img" class="no-pfp">
+            <ng-container
+              *ngIf="cast['profile_path'] == null; else img"
+              class="no-pfp"
+            >
               <img
                 src="../../assets/img/null-profile.jpg"
                 alt=""
@@ -127,15 +146,15 @@
             </ng-container>
             <ng-template #img>
               <img
-              [src]="
-                'http://image.tmdb.org/t/p/w300_and_h450_bestv2/' +
-                cast['profile_path']
-              "
-              alt=""
-              width="200px"
-            />
+                [src]="
+                  'http://image.tmdb.org/t/p/w300_and_h450_bestv2/' +
+                  cast['profile_path']
+                "
+                alt=""
+                width="200px"
+              />
             </ng-template>
-            
+
             <h4>{{ cast["name"] }}</h4>
             <p>{{ cast["character"] }}</p>
           </div>
