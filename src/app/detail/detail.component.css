@@ -24,16 +24,16 @@
     width: 100%;
     height: 100%;
 }
-.popup-container .close-btn {
+.close-btn {
     background: transparent;
     position: absolute;
     margin: 0 auto;
     top: 10px;
 }
-.popup-container .close-btn:hover i {
+.close-btn:hover i {
     color: rgb(219, 55, 55);
 }
-.popup-container .close-btn i {
+.close-btn i {
     font-size: 3.6rem;
 }
 
