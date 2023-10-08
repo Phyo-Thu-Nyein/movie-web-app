@@ -5,16 +5,12 @@
 
 /* YOUTUBE VID POPUP */
 .popup-container {
-    background-color: rgba(0, 0, 0, 0.596);
-    overflow: hidden;
     width: 100vw;
     height: 100vh;
     max-width: 100%;
-    z-index: 1;
     justify-content: center;
     opacity: 0;
     transform: translateY(-9rem);
-    transition: all .4s;
 }
 .popup-container::backdrop {
     background-color: rgba(0, 0, 0, 0.89);
@@ -24,7 +20,6 @@
     transform: translateY(1.2rem);
 }
 .popup-container .yt-popup {
-    background-color: brown;
     aspect-ratio: 16/9;
     width: 100%;
     height: 100%;
@@ -33,21 +28,13 @@
     background: transparent;
     position: absolute;
     margin: 0 auto;
-    /* right: 48%; */
     top: 10px;
-    outline: none;
-    border: none;
 }
 .popup-container .close-btn:hover i {
     color: rgb(219, 55, 55);
 }
 .popup-container .close-btn i {
     font-size: 3.6rem;
-}
-.popbtn {
-    width: 100px;
-    height: 100px;
-    z-index: 100;
 }
 
 /* YT EMBEDED BACKGROUND VID  */
