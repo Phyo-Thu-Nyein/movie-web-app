@@ -6,7 +6,6 @@
 </ng-container>
 
 <ng-template #detailcontent>
-
   <!-- Youtube Trailer Popup -->
   <dialog class="popup-container flex" id="popvid">
     <iframe
@@ -54,13 +53,10 @@
         </div>
       </div>
       <div class="trailers flex">
-        <button
-          class="mybtn flex"
-          onclick="popvid.showModal()"
-        >
+        <button class="mybtn flex" onclick="popvid.showModal()">
           <i class="bx bxl-youtube"></i>
           <span>Trailer</span>
-      </button>
+        </button>
         <!-- <button routerLink="" (click)="trailerYT()" class="flex">
         <span>Trailer</span>
       </button> -->
@@ -116,12 +112,12 @@
           </div>
         </div>
       </div>
-    </div>
-    <div class="scroll-arrow">
-      <h3>Scroll For More</h3>
-      <h1>
-        <i class="bx bxs-chevron-down bx-fade-up" style="color: #ffffff"></i>
-      </h1>
+      <div class="scroll-arrow">
+        <h3>Scroll For More</h3>
+        <h1 style="text-align: center;">
+          <i class="bx bxs-chevron-down bx-fade-up" style="color: #ffffff"></i>
+        </h1>
+      </div>
     </div>
   </div>
 

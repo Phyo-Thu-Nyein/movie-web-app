@@ -107,7 +107,7 @@
 
 .mynavbar .links a {
     color: #fff;
-    font-size: 1rem;
+    font-size: 1.1vw;
 }
 
 .mynavbar .links a::before {
@@ -151,7 +151,7 @@
 .search-bar {
     /* background-color: #d36d3e; */
     justify-content: center;
-    width: 305px;
+    width: 50px;
     height: 45px;
     gap: 5px;
 }
@@ -164,8 +164,8 @@
     color: white;
     font-size: 1.2rem;
     padding: 0 .6rem;
-    width: 260px;
-    height: 86%;
+    width: 200px;
+    height: 100%;
 }
 
 .search-bar input:focus {
@@ -178,11 +178,11 @@
 
 .search-bar button {
     background-color: rgba(0, 0, 0, 0);
-    border: 1px solid rgba(255, 255, 255, 0.226);
+    /* border: 1px solid rgba(255, 255, 255, 0.226); */
     border-radius: .8rem;
     justify-content: center;
     width: 40px;
-    height: 86%;
+    height: 100%;
 }
 
 .search-bar button:hover i {
@@ -194,6 +194,16 @@
 }
 
 /* MAKING IT RESPONSIVE FOR PHONES */
+@media (max-width:910px) {
+
+    .mynavbar .logout i {
+        font-size: 1.6rem;
+    }
+
+    .mynavbar .logout a {
+        display: none;
+    }
+}
 @media (max-width:860px) {
     .mynavbar .menu-icon {
         display: block;
@@ -221,13 +231,6 @@
         /* border: 1px solid white; */
     }
 
-    .mynavbar .logout i {
-        font-size: 1.6rem;
-    }
-
-    .mynavbar .logout a {
-        display: none;
-    }
 }
 
 @media (max-width: 744px) {

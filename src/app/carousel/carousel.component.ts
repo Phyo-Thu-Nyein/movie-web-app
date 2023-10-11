@@ -9,20 +9,15 @@ import * as Flickity from 'flickity';
 @Component({
   selector: 'app-carousel',
   templateUrl: './carousel.component.html',
-  styleUrls: ['./carousel.component.css']
+  styleUrls: ['./carousel.component.css'],
 })
 export class CarouselComponent {
-  constructor(private apiService: ApiService, private router: Router, private activatedRoute:ActivatedRoute) {  }
+  constructor(
+    private apiService: ApiService,
+    private router: Router,
+    private activatedRoute: ActivatedRoute
+  ) {}
 
-  @ViewChild('carousel') carousel!: ElementRef;
-  ngAfterViewInit(): void {
-    const flkty = new Flickity(this.carousel.nativeElement, {
-      wrapAround: true,
-      autoPlay: 2500,
-     lazyLoad: true
-    });
-  }
-  
   // mySubscription: Subscription = new Subscription();
   movieSub: Subscription = new Subscription();
 
@@ -36,13 +31,10 @@ export class CarouselComponent {
   // http://image.tmdb.org/t/p/w500/
   poster_path: string = '';
 
-  ngOnInit() {
-    
-    // this.reloadPage();
-    // console.log('-------BEFORE------');
-    // this.getMovie();
-    // console.log('-------AFTER--------');
+  //loading
+  loading: boolean = true;
 
+  ngOnInit() {
     var result = this.apiService.getMovies('popular');
     this.movieSub = result.subscribe({
       next: (response: Movie) => {
@@ -88,16 +80,32 @@ export class CarouselComponent {
         this.upComingList = response['results'];
         this.movieID = response['results'][1]['id'];
         this.backdrop_path = response['results'][1]['backdrop_path'];
-
         this.poster_path = response['results'][1]['poster_path'];
+        
       },
       error: (err: HttpErrorResponse) => {
         console.log(err);
       },
     });
+    
+    setTimeout(() => {
+      this.loading = false;
+    }, 100);
   }
 
-  
+  @ViewChild('carousel') carousel!: ElementRef;
+  ngAfterViewInit(): void {
+    setTimeout(() => {
+      const flkty = new Flickity(this.carousel.nativeElement, {
+        wrapAround: true,
+        autoPlay: 2500,
+        lazyLoad: true,
+      });
+    }, 600);
+      
+    
+  }
+
   // reloadPage() {
   //   window.location.reload();
   //   console.log("it works, the reloading");
@@ -106,11 +114,9 @@ export class CarouselComponent {
   goToDetail(movieID: number) {
     var id = movieID;
     this.router.navigateByUrl(`detail/${id}`);
-
   }
 
   ngOnDestroy() {
-    
     if (this.movieSub) {
       this.movieSub.unsubscribe();
     }
@@ -118,5 +124,4 @@ export class CarouselComponent {
     //   this.mySubscription.unsubscribe();
     // }
   }
-
 }
