@@ -20,10 +20,27 @@
 
 .landing-body {
     position: relative;
-    background-image: url('../../../src/assets/img/landing.jpg');
+    background-image: url('../../../src/assets/img/landing-small.webp');
     background-size: cover;
     background-position: center;
     height: 100vh;
+}
+
+.landing-body img {
+    position: absolute;
+    object-fit: cover;
+    object-position: center;
+    width: 100%;
+    height: 100%;
+    animation: fade-in 1.2s ease-in-out;
+}
+@keyframes fade-in {
+    0%,30% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
 }
 
 .landing-body .brand {

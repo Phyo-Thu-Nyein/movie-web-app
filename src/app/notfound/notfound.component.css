@@ -6,7 +6,7 @@
 }
 .bg-img {
     background-color: rgba(0, 0, 0, 0.24);
-    background-image: url('../../assets/img/signin-bg.png');
+    background-image: url('../../assets/img/signin-bg.webp');
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
