@@ -3,7 +3,7 @@
     align-items: center;
 }
 .wrapper {
-    background-color: rgb(0, 0, 0);
+    background-color: rgba(0, 0, 0, 0);
     position: absolute;
     justify-content: center;
     width: 100vw;
@@ -19,9 +19,9 @@
     gap: 2rem;
     align-items: start;
 }
-.container .profile {
-    /* background-color: rgba(238, 130, 238, 0.705); */
-}
+/* .container .profile {
+    background-color: rgba(238, 130, 238, 0.705);
+} */
 .container .profile .info .infos {
     flex-direction: column;
     align-items: start;

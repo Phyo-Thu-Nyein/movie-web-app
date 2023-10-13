@@ -57,28 +57,25 @@
           <i class="bx bxl-youtube"></i>
           <span>Trailer</span>
         </button>
-        <!-- <button routerLink="" (click)="trailerYT()" class="flex">
-        <span>Trailer</span>
-      </button> -->
       </div>
       <div class="overview">
-        <strong>Overview: </strong>
-        <p>{{ overview }}</p>
+        <strong style="font-size: 0.9rem">Overview: </strong>
+        <p style="font-size: 0.8rem">{{ overview }}</p>
       </div>
       <div class="more-details flex">
         <div class="date-genre-cast">
           <div class="date">
-            <strong>Released: </strong>
+            <strong style="font-size: 0.9rem">Released: </strong>
             <span>{{ release_date }}</span>
           </div>
           <div class="genre">
-            <strong>Genre: </strong>
+            <strong style="font-size: 0.9rem">Genre: </strong>
             <span *ngFor="let genre of genres">
               {{ genre["name"] }}
             </span>
           </div>
           <div class="casts">
-            <strong>Casts: </strong>
+            <strong style="font-size: 0.9rem">Casts: </strong>
             <ng-container *ngFor="let cast of casts; let i = index">
               <span *ngIf="i < 5">
                 {{ cast["name"] }}
@@ -89,11 +86,11 @@
         </div>
         <div class="time-country-prod">
           <div class="duration">
-            <strong>Duration: </strong>
+            <strong style="font-size: 0.9rem">Duration: </strong>
             <span>{{ runtime }} mins</span>
           </div>
           <div class="country">
-            <strong>Country: </strong>
+            <strong style="font-size: 0.9rem">Country: </strong>
             <ng-container *ngFor="let country of countries; let i = index">
               <span>
                 {{ country["name"] }}
@@ -102,7 +99,7 @@
             </ng-container>
           </div>
           <div class="production">
-            <strong>Production: </strong>
+            <strong style="font-size: 0.9rem">Production: </strong>
             <ng-container *ngFor="let company of companies; let i = index">
               <span>
                 {{ company["name"] }}
@@ -114,7 +111,7 @@
       </div>
       <div class="scroll-arrow">
         <h3>Scroll For More</h3>
-        <h1 style="text-align: center;">
+        <h1 style="text-align: center">
           <i class="bx bxs-chevron-down bx-fade-up" style="color: #ffffff"></i>
         </h1>
       </div>
