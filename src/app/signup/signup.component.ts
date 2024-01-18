@@ -28,7 +28,7 @@ export class SignupComponent {
         'name': this.username,
         'email': this.email,
         'password': this.password,
-        'passwordConfirm': this.conpassword
+        // 'passwordConfirm': this.conpassword
       }
     );
 

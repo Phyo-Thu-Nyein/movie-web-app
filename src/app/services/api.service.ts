@@ -77,8 +77,8 @@ export class ApiService {
     )
   }
 
-  loginUrl: string = 'https://msi.htoowaiyan.com/api/v1/users/signin';
-  registerUrl: string = 'https://msi.htoowaiyan.com/api/v1/users/signup';
+  loginUrl: string = 'https://awesome-tour.onrender.com/api/v1/auth/login';
+  registerUrl: string = 'https://awesome-tour.onrender.com/api/v1/auth/register';
  
   
   options = {
